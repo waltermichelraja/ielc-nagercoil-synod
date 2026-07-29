@@ -1,0 +1,16 @@
+{
+  "president": { "name": "Rev. [Synod President Name]", "bio": "Placeholder biography — replace with the President's background, years of ministry, and appointment date.", "photo": "/images/placeholder-person.svg" },
+  "vicePresident": { "name": "Rev. [Synod Vice President Name]", "bio": "Placeholder biography.", "photo": "/images/placeholder-person.svg" },
+  "secretary": { "name": "Mr./Mrs. [Synod Secretary Name]", "bio": "Placeholder biography.", "photo": "/images/placeholder-person.svg" },
+  "jointSecretary": { "name": "Mr./Mrs. [Joint Secretary Name]", "bio": "Placeholder biography.", "photo": "/images/placeholder-person.svg" },
+  "treasurer": { "name": "Mr./Mrs. [Synod Treasurer Name]", "bio": "Placeholder biography.", "photo": "/images/placeholder-person.svg" },
+  "executiveMembers": [
+    { "name": "[Executive Member 1]", "photo": "/images/placeholder-person.svg" },
+    { "name": "[Executive Member 2]", "photo": "/images/placeholder-person.svg" },
+    { "name": "[Executive Member 3]", "photo": "/images/placeholder-person.svg" }
+  ],
+  "officeStaff": [
+    { "name": "[Staff Member 1]", "position": "[Position]", "photo": "/images/placeholder-person.svg" },
+    { "name": "[Staff Member 2]", "position": "[Position]", "photo": "/images/placeholder-person.svg" }
+  ]
+}

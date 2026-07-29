@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Colachel Circle",
+    "slug": "colachel",
+    "pastorates": 0,
+    "congregations": 0,
+    "president": "Rev. [Circle President Name]",
+    "vicePresident": "Rev. [Circle Vice President Name]",
+    "secretaryTreasurer": "Mr./Mrs. [Secretary cum Treasurer Name]",
+    "jointSecretary": "Mr./Mrs. [Joint Secretary Name]",
+    "executiveMembers": ["[Executive Member 1]", "[Executive Member 2]"]
+  },
+  {
+    "name": "Madurai Circle",
+    "slug": "madurai",
+    "pastorates": 0,
+    "congregations": 0,
+    "president": "Rev. [Circle President Name]",
+    "vicePresident": "Rev. [Circle Vice President Name]",
+    "secretaryTreasurer": "Mr./Mrs. [Secretary cum Treasurer Name]",
+    "jointSecretary": "Mr./Mrs. [Joint Secretary Name]",
+    "executiveMembers": ["[Executive Member 1]", "[Executive Member 2]"]
+  },
+  {
+    "name": "Nagercoil Circle",
+    "slug": "nagercoil",
+    "pastorates": 0,
+    "congregations": 0,
+    "president": "Rev. [Circle President Name]",
+    "vicePresident": "Rev. [Circle Vice President Name]",
+    "secretaryTreasurer": "Mr./Mrs. [Secretary cum Treasurer Name]",
+    "jointSecretary": "Mr./Mrs. [Joint Secretary Name]",
+    "executiveMembers": ["[Executive Member 1]", "[Executive Member 2]"]
+  },
+  {
+    "name": "Thovalai Circle",
+    "slug": "thovalai",
+    "pastorates": 0,
+    "congregations": 0,
+    "president": "Rev. [Circle President Name]",
+    "vicePresident": "Rev. [Circle Vice President Name]",
+    "secretaryTreasurer": "Mr./Mrs. [Secretary cum Treasurer Name]",
+    "jointSecretary": "Mr./Mrs. [Joint Secretary Name]",
+    "executiveMembers": ["[Executive Member 1]", "[Executive Member 2]"]
+  },
+  {
+    "name": "Tirunelveli Circle",
+    "slug": "tirunelveli",
+    "pastorates": 0,
+    "congregations": 0,
+    "president": "Rev. [Circle President Name]",
+    "vicePresident": "Rev. [Circle Vice President Name]",
+    "secretaryTreasurer": "Mr./Mrs. [Secretary cum Treasurer Name]",
+    "jointSecretary": "Mr./Mrs. [Joint Secretary Name]",
+    "executiveMembers": ["[Executive Member 1]", "[Executive Member 2]"]
+  }
+]

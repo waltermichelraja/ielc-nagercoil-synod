@@ -1,0 +1,15 @@
+{
+  "synodEvents": [
+    { "title": "[Synod Event Title]", "date": "2026-01-01", "description": "Placeholder description of a synod-wide event.", "image": "/images/placeholder-event.svg" }
+  ],
+  "circleEvents": [
+    { "circle": "Colachel Circle", "title": "[Event Title]", "date": "2026-01-01", "description": "Placeholder description.", "image": "/images/placeholder-event.svg" },
+    { "circle": "Madurai Circle", "title": "[Event Title]", "date": "2026-01-01", "description": "Placeholder description.", "image": "/images/placeholder-event.svg" },
+    { "circle": "Nagercoil Circle", "title": "[Event Title]", "date": "2026-01-01", "description": "Placeholder description.", "image": "/images/placeholder-event.svg" },
+    { "circle": "Thovalai Circle", "title": "[Event Title]", "date": "2026-01-01", "description": "Placeholder description.", "image": "/images/placeholder-event.svg" },
+    { "circle": "Tirunelveli Circle", "title": "[Event Title]", "date": "2026-01-01", "description": "Placeholder description.", "image": "/images/placeholder-event.svg" }
+  ],
+  "schoolEvents": [
+    { "title": "[School Event Title]", "date": "2026-01-01", "description": "Placeholder description of a school-related event.", "image": "/images/placeholder-event.svg" }
+  ]
+}
