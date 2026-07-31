@@ -16,6 +16,13 @@
   },
   "social": {
     "facebook": "",
-    "youtube": ""
+    "instagram": "",
+    "youtube": "",
+    "whatsapp": "",
+    "twitter": ""
+  },
+  "landing": {
+    "motto": "That they all may be one",
+    "heroImage": "/images/placeholder-hero.svg"
   }
 }

@@ -1,7 +1,8 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
+import Landing from "./pages/Landing.jsx";
 import Home from "./pages/Home.jsx";
 import Message from "./pages/Message.jsx";
 import Events from "./pages/Events.jsx";
@@ -25,7 +26,8 @@ function usePageTitle() {
   const { pathname } = useLocation();
   useEffect(() => {
     const map = {
-      "/": "Home",
+      "/": undefined, // landing page just uses the site name
+      "/home": "Home",
       "/message": "Message",
       "/events": "Events",
       "/overview": "Overview",
@@ -38,26 +40,36 @@ function usePageTitle() {
   }, [pathname]);
 }
 
-function AppShell() {
-  usePageTitle();
+// Shared shell (header, ticker, footer) for every page except the splash Landing page
+function SiteLayout() {
   return (
     <>
       <Header />
       <main id="main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/message" element={<Message />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/overview" element={<Overview />} />
-          <Route path="/leadership" element={<Leadership />} />
-          <Route path="/congregations" element={<Congregations />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/circles/:slug" element={<Circle />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Outlet />
       </main>
       <Footer />
     </>
+  );
+}
+
+function AppRoutes() {
+  usePageTitle();
+  return (
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route element={<SiteLayout />}>
+        <Route path="/home" element={<Home />} />
+        <Route path="/message" element={<Message />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/overview" element={<Overview />} />
+        <Route path="/leadership" element={<Leadership />} />
+        <Route path="/congregations" element={<Congregations />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/circles/:slug" element={<Circle />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 }
 
@@ -65,7 +77,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
-      <AppShell />
+      <AppRoutes />
     </>
   );
 }

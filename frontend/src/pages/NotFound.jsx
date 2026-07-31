@@ -7,7 +7,7 @@ export default function NotFound() {
         <span className="eyebrow">404</span>
         <h1>Page Not Found</h1>
         <p>The page you're looking for doesn't exist.</p>
-        <Link to="/" className="btn">Back to Home</Link>
+        <Link to="/home" className="btn">Back to Home</Link>
       </div>
     </section>
   );

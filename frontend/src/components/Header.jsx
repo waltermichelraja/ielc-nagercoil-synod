@@ -2,8 +2,8 @@ import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import site from "../data/site.js";
 
-const NAV_ITEMS = [
-  { to: "/", label: "Home", end: true },
+export const NAV_ITEMS = [
+  { to: "/home", label: "Home", end: true },
   { to: "/message", label: "Message" },
   { to: "/events", label: "Events" },
   { to: "/overview", label: "Overview" },
@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container">
-        <NavLink to="/" className="brand" onClick={() => setOpen(false)}>
+        <NavLink to="/home" className="brand" onClick={() => setOpen(false)}>
           <svg className="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <circle cx="20" cy="20" r="19" stroke="#C79A3B" strokeWidth="1.5" />
             <path d="M20 8V32M13 15H27" stroke="#C79A3B" strokeWidth="2" strokeLinecap="round" />

@@ -38,7 +38,17 @@ collections:
             required: false
             fields:
               - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
               - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
+              - { label: "WhatsApp Link (wa.me/...)", name: "whatsapp", widget: "string", required: false }
+              - { label: "X (Twitter) URL", name: "twitter", widget: "string", required: false }
+          - label: "Landing Page (opening splash screen)"
+            name: "landing"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Motto / Bible verse (English)", name: "motto", widget: "string", required: false }
+              - { label: "Hero Background Image", name: "heroImage", widget: "image", required: false }
 
   - name: "messages"
     label: "Messages"
