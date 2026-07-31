@@ -1,0 +1,193 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded images go, and how they're referenced in content
+media_folder: "src/data/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://REPLACE-WITH-YOUR-NETLIFY-SITE.netlify.app
+
+collections:
+  - name: "site_settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "src/data/content/site.json"
+        fields:
+          - { label: "Full Site Title", name: "title", widget: "string" }
+          - { label: "Short Title (header)", name: "shortTitle", widget: "string" }
+          - { label: "Tagline (Tamil)", name: "tagline", widget: "string" }
+          - label: "Notice Board (scrolling ticker)"
+            name: "notices"
+            widget: "list"
+            field: { label: "Notice", name: "notice", widget: "string" }
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Office Name", name: "officeName", widget: "string" }
+              - { label: "Address", name: "address", widget: "text" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string" }
+              - { label: "Google Maps Embed URL", name: "mapEmbedUrl", widget: "string", required: false }
+          - label: "Social Links"
+            name: "social"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+              - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
+              - { label: "WhatsApp Link (wa.me/...)", name: "whatsapp", widget: "string", required: false }
+              - { label: "X (Twitter) URL", name: "twitter", widget: "string", required: false }
+          - label: "Landing Page (opening splash screen)"
+            name: "landing"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Motto / Bible verse (English)", name: "motto", widget: "string", required: false }
+              - { label: "Hero Background Image", name: "heroImage", widget: "image", required: false }
+
+  - name: "messages"
+    label: "Messages"
+    files:
+      - name: "messages"
+        label: "President / VP / Secretary / Daily Message"
+        file: "src/data/content/messages.json"
+        fields:
+          - label: "Messages"
+            name: "messages"
+            widget: "list"
+            fields:
+              - { label: "Role / Section Title", name: "role", widget: "string" }
+              - { label: "Author", name: "author", widget: "string" }
+              - { label: "Message Text", name: "text", widget: "text" }
+
+  - name: "synod_bearers"
+    label: "Admin — Synod Office Bearers"
+    files:
+      - name: "synod_bearers"
+        label: "Synod Office Bearers"
+        file: "src/data/content/synodBearers.json"
+        fields:
+          - label: "President"
+            name: "president"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image" }
+          - label: "Vice President"
+            name: "vicePresident"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image" }
+          - label: "Secretary"
+            name: "secretary"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image" }
+          - label: "Joint Secretary"
+            name: "jointSecretary"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image" }
+          - label: "Treasurer"
+            name: "treasurer"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image" }
+          - label: "Executive Members"
+            name: "executiveMembers"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image" }
+          - label: "Office Staff"
+            name: "officeStaff"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Position", name: "position", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image" }
+
+  - name: "circles"
+    label: "Circles"
+    files:
+      - name: "circles"
+        label: "Circle Details & Office Bearers"
+        file: "src/data/content/circles.json"
+        fields:
+          - name: "circles"
+            label: "Circles"
+            widget: "list"
+            fields:
+              - { label: "Circle Name", name: "name", widget: "string" }
+              - { label: "URL Slug (no spaces, lowercase)", name: "slug", widget: "string" }
+              - { label: "Pastorates", name: "pastorates", widget: "number", valueType: "int" }
+              - { label: "Congregations", name: "congregations", widget: "number", valueType: "int" }
+              - { label: "President", name: "president", widget: "string" }
+              - { label: "Vice President", name: "vicePresident", widget: "string" }
+              - { label: "Secretary cum Treasurer", name: "secretaryTreasurer", widget: "string" }
+              - { label: "Joint Secretary", name: "jointSecretary", widget: "string" }
+              - label: "Executive Members"
+                name: "executiveMembers"
+                widget: "list"
+                field: { label: "Name", name: "name", widget: "string" }
+
+  - name: "events"
+    label: "Events"
+    files:
+      - name: "events"
+        label: "Synod, Circle & School Events"
+        file: "src/data/content/events.json"
+        fields:
+          - label: "Synod Events"
+            name: "synodEvents"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "date" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Photo", name: "image", widget: "image" }
+          - label: "Circle Events"
+            name: "circleEvents"
+            widget: "list"
+            fields:
+              - { label: "Circle", name: "circle", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "date" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Photo", name: "image", widget: "image" }
+          - label: "School Events"
+            name: "schoolEvents"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "date" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Photo", name: "image", widget: "image" }
+
+  - name: "overview"
+    label: "Overview Stats"
+    files:
+      - name: "overview"
+        label: "Synod-wide Stats"
+        file: "src/data/content/overview.json"
+        fields:
+          - { label: "Number of Circles", name: "circles", widget: "number", valueType: "int" }
+          - { label: "Pastorates", name: "pastorates", widget: "number", valueType: "int" }
+          - { label: "Congregations", name: "congregations", widget: "number", valueType: "int" }
+          - { label: "Gospel Centers", name: "gospelCenters", widget: "number", valueType: "int" }
+          - { label: "Schools", name: "schools", widget: "number", valueType: "int" }
+          - { label: "Members", name: "members", widget: "number", valueType: "int" }

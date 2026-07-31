@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# SPA fallback: React Router handles routing client-side
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
