@@ -50,6 +50,20 @@ collections:
               - { label: "Motto / Bible verse (English)", name: "motto", widget: "string", required: false }
               - { label: "Hero Background Image", name: "heroImage", widget: "image", required: false }
 
+  - name: "about"
+    label: "About the IELC (Home page)"
+    files:
+      - name: "about"
+        label: "About Section"
+        file: "src/data/content/about.json"
+        fields:
+          - { label: "Eyebrow label", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - label: "Paragraphs"
+            name: "paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+
   - name: "messages"
     label: "Messages"
     files:
@@ -77,49 +91,63 @@ collections:
             widget: "object"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
+              - { label: "Bio", name: "bio", widget: "text", required: false }
               - { label: "Photo", name: "photo", widget: "image" }
           - label: "Vice President"
             name: "vicePresident"
             widget: "object"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
+              - { label: "Bio", name: "bio", widget: "text", required: false }
               - { label: "Photo", name: "photo", widget: "image" }
           - label: "Secretary"
             name: "secretary"
             widget: "object"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
+              - { label: "Bio", name: "bio", widget: "text", required: false }
               - { label: "Photo", name: "photo", widget: "image" }
           - label: "Joint Secretary"
             name: "jointSecretary"
             widget: "object"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
+              - { label: "Bio", name: "bio", widget: "text", required: false }
               - { label: "Photo", name: "photo", widget: "image" }
           - label: "Treasurer"
             name: "treasurer"
             widget: "object"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
+              - { label: "Bio", name: "bio", widget: "text", required: false }
               - { label: "Photo", name: "photo", widget: "image" }
-          - label: "Executive Members"
+          - label: "Synod Executive Members"
             name: "executiveMembers"
             widget: "list"
             fields:
               - { label: "Name", name: "name", widget: "string" }
+              - { label: "Place", name: "place", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
               - { label: "Photo", name: "photo", widget: "image" }
-          - label: "Office Staff"
-            name: "officeStaff"
+          - label: "Church Council Members"
+            name: "churchCouncilMembers"
             widget: "list"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - { label: "Position", name: "position", widget: "string" }
-              - { label: "Photo", name: "photo", widget: "image" }
+              - { label: "Place", name: "place", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
+          - label: "Trust Association Members"
+            name: "trustAssociationMembers"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Place", name: "place", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
 
   - name: "circles"
     label: "Circles"
@@ -134,16 +162,30 @@ collections:
             fields:
               - { label: "Circle Name", name: "name", widget: "string" }
               - { label: "URL Slug (no spaces, lowercase)", name: "slug", widget: "string" }
+              - { label: "Pastors", name: "pastors", widget: "number", valueType: "int" }
+              - { label: "Probationers", name: "probationers", widget: "number", valueType: "int" }
               - { label: "Pastorates", name: "pastorates", widget: "number", valueType: "int" }
               - { label: "Congregations", name: "congregations", widget: "number", valueType: "int" }
+              - { label: "Gospel Centers", name: "gospelCenters", widget: "number", valueType: "int" }
+              - label: "Schools"
+                name: "schools"
+                widget: "object"
+                fields:
+                  - { label: "Primary", name: "primary", widget: "number", valueType: "int" }
+                  - { label: "Middle", name: "middle", widget: "number", valueType: "int" }
+                  - { label: "High School", name: "hs", widget: "number", valueType: "int" }
+                  - { label: "Hr. Sec. School", name: "hss", widget: "number", valueType: "int" }
+                  - { label: "Total", name: "total", widget: "number", valueType: "int" }
               - { label: "President", name: "president", widget: "string" }
               - { label: "Vice President", name: "vicePresident", widget: "string" }
               - { label: "Secretary cum Treasurer", name: "secretaryTreasurer", widget: "string" }
               - { label: "Joint Secretary", name: "jointSecretary", widget: "string" }
-              - label: "Executive Members"
+              - label: "Circle Executives"
                 name: "executiveMembers"
                 widget: "list"
-                field: { label: "Name", name: "name", widget: "string" }
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Pastorate", name: "pastorate", widget: "string" }
 
   - name: "events"
     label: "Events"
@@ -186,8 +228,10 @@ collections:
         file: "src/data/content/overview.json"
         fields:
           - { label: "Number of Circles", name: "circles", widget: "number", valueType: "int" }
+          - { label: "Pastors", name: "pastors", widget: "number", valueType: "int" }
+          - { label: "Probationers", name: "probationers", widget: "number", valueType: "int" }
           - { label: "Pastorates", name: "pastorates", widget: "number", valueType: "int" }
           - { label: "Congregations", name: "congregations", widget: "number", valueType: "int" }
           - { label: "Gospel Centers", name: "gospelCenters", widget: "number", valueType: "int" }
           - { label: "Schools", name: "schools", widget: "number", valueType: "int" }
-          - { label: "Members", name: "members", widget: "number", valueType: "int" }
+          - { label: "Members", name: "members", widget: "number", valueType: "int", required: false }
