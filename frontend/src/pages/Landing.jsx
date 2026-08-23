@@ -115,12 +115,9 @@ export default function Landing() {
       </div>
 
       <div className="landing-content">
-        <svg className="landing-logo" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="60" cy="60" r="56" stroke="#C79A3B" strokeWidth="2" />
-          <path d="M60 26v68M38 46h44" stroke="#C79A3B" strokeWidth="3" strokeLinecap="round" />
-        </svg>
+        <img className="landing-logo" src="/images/ielc-logo.png" alt="IELC logo" />
 
-        <h1>Welcome to the {site.shortTitle}</h1>
+        <h1>Welcome to the <br/>{site.shortTitle}</h1>
 
         <p className="landing-tagline">
           {landing.motto && <span>{landing.motto}</span>}
