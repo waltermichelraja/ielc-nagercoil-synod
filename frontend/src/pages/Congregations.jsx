@@ -7,14 +7,18 @@ export default function Congregations() {
       <div className="container">
         <span className="eyebrow">Where We Serve</span>
         <h1>Congregations</h1>
-        <p>Pastorates and congregations across the Synod's five circles.</p>
+        <p>Pastors, pastorates, congregations, gospel centers, and schools across the Synod's five circles.</p>
 
         <table className="data-table">
           <thead>
             <tr>
               <th>Circle</th>
+              <th>Pastors</th>
+              <th>Probationers</th>
               <th>Pastorates</th>
               <th>Congregations</th>
+              <th>Gospel Centers</th>
+              <th>Schools</th>
               <th></th>
             </tr>
           </thead>
@@ -22,8 +26,12 @@ export default function Congregations() {
             {circles.map((circle) => (
               <tr key={circle.slug}>
                 <td>{circle.name}</td>
+                <td>{circle.pastors}</td>
+                <td>{circle.probationers}</td>
                 <td>{circle.pastorates}</td>
                 <td>{circle.congregations}</td>
+                <td>{circle.gospelCenters}</td>
+                <td>{circle.schools.total}</td>
                 <td><Link to={`/circles/${circle.slug}`}>View details &rarr;</Link></td>
               </tr>
             ))}
