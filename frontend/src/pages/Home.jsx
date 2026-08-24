@@ -1,25 +1,23 @@
 import{Link}from"react-router-dom";
-import site from"../data/site.js";
 import overview from"../data/overview.js";
 import HierarchyDiagram from"../components/HierarchyDiagram.jsx";
+import martinLutherGold from"/images/martin-luther-gold.png";
 
 export default function Home(){
   return(
     <>
-      <section className="hero">
-        <div className="container">
-          <span className="eyebrow">India Evangelical Lutheran Church</span>
-          <h1>{site.title}</h1>
-          <p className="lede">
-            Serving five circles across Kanyakumari and its neighbouring districts &mdash; Colachel,
-            Madurai, Nagercoil, Thovalai, and Tirunelveli &mdash; in worship, education, and community
-            life.
-          </p>
-          <Link to="/overview" className="btn">View Synod Overview</Link>
-          <Link to="/message" className="btn btn-outline">Read the President's Message</Link>
-        </div>
-        <div className="horizon" aria-hidden="true"/>
-      </section>
+      <section
+        className="hero"
+        style={{
+          minHeight:"420px",
+          backgroundImage:`linear-gradient(rgba(19,54,67,0.2),rgba(19,54,67,0.2)),url(${martinLutherGold})`,
+          backgroundSize:"auto 92%",
+          backgroundPosition:"center",
+          backgroundColor:"#133643",
+          backgroundRepeat:"no-repeat"
+        }}
+        aria-label="Martin Luther background"
+      />
 
       <section className="section">
         <div className="container">
