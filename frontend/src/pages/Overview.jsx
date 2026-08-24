@@ -1,22 +1,16 @@
-import overview from "../data/overview.js";
-import HierarchyDiagram from "../components/HierarchyDiagram.jsx";
+import overview from"../data/overview.js";
+import circles from"../data/circles.js";
+import HierarchyDiagram from"../components/HierarchyDiagram.jsx";
 
-export default function Overview() {
-  return (
+export default function Overview(){
+  return(
     <>
       <section className="section">
         <div className="container">
           <span className="eyebrow">The Synod at a Glance</span>
           <h1>Overview</h1>
-          <p>The IELC-Nagercoil Synod plays a vital role in the IELC History. The headquarters of the IELC is located in the Nagercoil Synod. 
-            Although the ministry was initiated in India by American LC-MS missionaries in 1895, it expanded to the Nagercoil area in November 1907. 
-            Mr. G. Yesudasan from Nagercoil was instrumental in the establishment of the Lutheran Church in this region. 
-            Missionaries G. Huebner and T. Gutknecht initiated ministry in the area by establishing the Vadasery Church in 1907. 
-            Following that, the ministries of the LC-MS began to spread across the areas of the then-Tirunelveli district. 
-            Currently, the Nagercoil Synod is divided into five zones for administrative purposes: Colachel Circle, Nagercoil Circle, Madurai Circle, Thovalai Circle, and Tirunelveli Circle. 
-            Twenty-Nine schools operate under the Nagercoil Synod. 
-            Rev. R. Sathyanathan has been serving as the President of the Nagercoil Synod since October 2025.</p>
-            
+          <p>{overview.description}</p>
+
           <div className="stat-row">
             <div><span className="stat-number">{overview.circles}</span><span className="stat-label">Circles</span></div>
             <div><span className="stat-number">{overview.pastors}</span><span className="stat-label">Pastors</span></div>
@@ -32,7 +26,44 @@ export default function Overview() {
       <section className="section section-alt">
         <div className="container">
           <h2>Synod Structure</h2>
-          <HierarchyDiagram tierLabel={`${overview.circles} Circles`} showStats />
+          <HierarchyDiagram tierLabel={`${overview.circles} Circles`} showStats/>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <h2>Congregations</h2>
+          <p>Pastors, pastorates, congregations, gospel centers, and schools across the Synod's five circles.</p>
+          <div style={{overflowX:"auto"}}>
+            <table className="data-table">
+              <thead>
+                <tr>
+                  <th>Circle</th>
+                  <th>Pastors</th>
+                  <th>Probationers</th>
+                  <th>Pastorates</th>
+                  <th>Congregations</th>
+                  <th>Gospel Centers</th>
+                  <th>Schools</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {circles.map(circle=>(
+                  <tr key={circle.slug}>
+                    <td>{circle.name}</td>
+                    <td>{circle.pastors}</td>
+                    <td>{circle.probationers}</td>
+                    <td>{circle.pastorates}</td>
+                    <td>{circle.congregations}</td>
+                    <td>{circle.gospelCenters}</td>
+                    <td>{circle.schools.total}</td>
+                    <td><a href={`/circles/${circle.slug}`}>View details &rarr;</a></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
     </>

@@ -1,6 +1,6 @@
 {
   "title": "India Evangelical Lutheran Church — Nagercoil Synod",
-  "shortTitle": "IELC Nagercoil Synod",
+  "shortTitle": "IELC — Nagercoil Synod",
   "tagline": "இந்திய சுவிசேஷ லூத்தரன் சபை — நாகர்கோவில் சபைச்சங்கம்",
   "notices": [
     "[Notice: Placeholder announcement — replace via admin panel]",
@@ -8,10 +8,11 @@
     "[Notice: Registrations open for [event]]"
   ],
   "contact": {
-    "officeName": "Nagercoil Synod Office",
-    "address": "[Synod Office Address], Nagercoil, Kanyakumari District, Tamil Nadu, [PIN]",
-    "email": "[office-email]@ielcnagercoil.org",
-    "phone": "+91 [phone number]",
+    "officeName": "Nagercoil Synod",
+    "address": "Lutheran Centre, Nagercoil - 629001, Kanyakumari District, South India",
+    "email": "",
+    "phone": "04652-463596",
+    "website": "",
     "mapEmbedUrl": ""
   },
   "social": {
