@@ -27,7 +27,8 @@ export default function Leadership() {
                   <img className="person-photo" src={person.photo} alt="" />
                   <p className="role">{role}</p>
                   <h3>{person.name}</h3>
-                  <p>{person.bio}</p>
+                  {person.phone && <p>{person.phone}</p>}
+                  {person.bio && <p>{person.bio}</p>}
                 </div>
               );
             })}
@@ -37,12 +38,14 @@ export default function Leadership() {
 
       <section className="section section-alt">
         <div className="container">
-          <h2>Executive Members</h2>
+          <h2>Synod Executive Members</h2>
           <div className="card-grid">
             {synodBearers.executiveMembers.map((member, i) => (
               <div className="card" key={i}>
                 <img className="person-photo" src={member.photo} alt="" />
                 <h3>{member.name}</h3>
+                <p className="role">{member.place}</p>
+                {member.phone && <p>{member.phone}</p>}
               </div>
             ))}
           </div>
@@ -51,13 +54,13 @@ export default function Leadership() {
 
       <section className="section">
         <div className="container">
-          <h2>Office Staff</h2>
+          <h2>Church Council Members</h2>
           <div className="card-grid">
-            {synodBearers.officeStaff.map((staff, i) => (
+            {synodBearers.churchCouncilMembers.map((member, i) => (
               <div className="card" key={i}>
-                <img className="person-photo" src={staff.photo} alt="" />
-                <h3>{staff.name}</h3>
-                <p className="role">{staff.position}</p>
+                <h3>{member.name}</h3>
+                <p className="role">{member.place}</p>
+                {member.phone && <p>{member.phone}</p>}
               </div>
             ))}
           </div>
@@ -65,6 +68,21 @@ export default function Leadership() {
       </section>
 
       <section className="section section-alt">
+        <div className="container">
+          <h2>Trust Association Members</h2>
+          <div className="card-grid">
+            {synodBearers.trustAssociationMembers.map((member, i) => (
+              <div className="card" key={i}>
+                <h3>{member.name}</h3>
+                <p className="role">{member.place}</p>
+                {member.phone && <p>{member.phone}</p>}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container">
           <h2>Circle Office Bearers</h2>
           <p>

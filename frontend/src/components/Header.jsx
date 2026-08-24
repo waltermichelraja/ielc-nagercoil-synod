@@ -20,10 +20,7 @@ export default function Header() {
     <header className="site-header">
       <div className="container">
         <NavLink to="/home" className="brand" onClick={() => setOpen(false)}>
-          <svg className="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="20" cy="20" r="19" stroke="#C79A3B" strokeWidth="1.5" />
-            <path d="M20 8V32M13 15H27" stroke="#C79A3B" strokeWidth="2" strokeLinecap="round" />
-          </svg>
+          <img className="brand-mark" src="/images/ielc-logo.png" alt="IELC logo" />
           <span className="brand-text">
             <span className="brand-name">{site.shortTitle}</span>
             <span className="brand-tagline">{site.tagline}</span>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import site from "../data/site.js";
+import about from "../data/about.js";
 import HierarchyDiagram from "../components/HierarchyDiagram.jsx";
 
 export default function Home() {
@@ -22,6 +23,18 @@ export default function Home() {
 
       <section className="section">
         <div className="container">
+          <span className="eyebrow">{about.eyebrow}</span>
+          <h2>{about.heading}</h2>
+          <div className="prose">
+            {about.paragraphs.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="container">
           <span className="eyebrow">Structure</span>
           <h2>One Synod, Five Circles</h2>
           <p>
@@ -32,7 +45,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section-alt">
+      <section className="section">
         <div className="container">
           <span className="eyebrow">Quick Links</span>
           <h2>Explore the Synod</h2>

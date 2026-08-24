@@ -1,27 +1,27 @@
 [
   {
     "role": "President's Message",
-    "author": "Rev. [Synod President Name]",
+    "author": "Rev. R. Sathianathan",
     "text": "Placeholder message from the Synod President. Replace with a short pastoral greeting, reflection, or welcome note for site visitors."
   },
   {
     "role": "Vice President's Message",
-    "author": "Rev. [Synod Vice President Name]",
+    "author": "Rev. T.V. Babu",
     "text": "Placeholder message from the Vice President."
   },
   {
     "role": "Secretary's Message",
-    "author": "Mr./Mrs. [Synod Secretary Name]",
+    "author": "Mr. M. Madev Santhaiah",
     "text": "Placeholder message from the Secretary."
   },
   {
     "role": "Joint Secretary's Message",
-    "author": "Mr./Mrs. [Joint Secretary Name]",
+    "author": "Mr. P. Baskar",
     "text": "Placeholder message from the Joint Secretary."
   },
   {
     "role": "Treasurer's Message",
-    "author": "Mr./Mrs. [Synod Treasurer Name]",
+    "author": "Mr. R. Binoba",
     "text": "Placeholder message from the Treasurer."
   },
   {

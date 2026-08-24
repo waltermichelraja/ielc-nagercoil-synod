@@ -21,8 +21,12 @@ export default function Circle() {
           <h1>{circle.name}</h1>
 
           <div className="stat-row" style={{ justifyContent: "flex-start", textAlign: "left" }}>
+            <div><span className="stat-number">{circle.pastors}</span><span className="stat-label">Pastors</span></div>
+            <div><span className="stat-number">{circle.probationers}</span><span className="stat-label">Probationers</span></div>
             <div><span className="stat-number">{circle.pastorates}</span><span className="stat-label">Pastorates</span></div>
             <div><span className="stat-number">{circle.congregations}</span><span className="stat-label">Congregations</span></div>
+            <div><span className="stat-number">{circle.gospelCenters}</span><span className="stat-label">Gospel Centers</span></div>
+            <div><span className="stat-number">{circle.schools.total}</span><span className="stat-label">Schools</span></div>
           </div>
         </div>
       </section>
@@ -49,16 +53,39 @@ export default function Circle() {
             </div>
           </div>
 
-          <h2 style={{ marginTop: "var(--space-4)" }}>Executive Members</h2>
-          <ul>
-            {circle.executiveMembers.map((member, i) => (
-              <li key={i}>{member}</li>
-            ))}
-          </ul>
+          <h2 style={{ marginTop: "var(--space-4)" }}>Circle Executives</h2>
+          <table className="data-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Pastorate</th>
+              </tr>
+            </thead>
+            <tbody>
+              {circle.executiveMembers.map((member, i) => (
+                <tr key={i}>
+                  <td>{member.name}</td>
+                  <td>{member.pastorate}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 
       <section className="section">
+        <div className="container">
+          <h2>Schools in this Circle</h2>
+          <div className="stat-row" style={{ justifyContent: "flex-start", textAlign: "left" }}>
+            <div><span className="stat-number">{circle.schools.primary}</span><span className="stat-label">Primary</span></div>
+            <div><span className="stat-number">{circle.schools.middle}</span><span className="stat-label">Middle</span></div>
+            <div><span className="stat-number">{circle.schools.hs}</span><span className="stat-label">High School</span></div>
+            <div><span className="stat-number">{circle.schools.hss}</span><span className="stat-label">Hr. Sec. School</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt">
         <div className="container">
           <Link to="/congregations">&larr; Back to all Congregations</Link>
         </div>

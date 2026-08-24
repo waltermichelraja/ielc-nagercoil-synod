@@ -1,8 +1,10 @@
 {
   "circles": 5,
-  "pastorates": 0,
-  "congregations": 0,
-  "gospelCenters": 0,
-  "schools": 0,
+  "pastors": 75,
+  "probationers": 14,
+  "pastorates": 78,
+  "congregations": 115,
+  "gospelCenters": 22,
+  "schools": 29,
   "members": 0
 }
