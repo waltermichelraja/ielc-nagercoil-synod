@@ -26,8 +26,8 @@ export default function Events(){
       <section className="section">
         <div className="container">
           <span className="eyebrow">What's Happening</span>
-          <h1>Events</h1>
-          <h2>Upcoming Events</h2>
+          {/* <h1>Events</h1> */}
+          <h2>Synod Upcoming Events</h2>
           <EventCards items={events.upcomingEvents}/>
         </div>
       </section>

@@ -30,13 +30,9 @@ export default function Home(){
               The Indian Evangelical Lutheran Church (IELC) is a confessional Lutheran Church denomination
               based in Nagercoil, Tamil Nadu, South India. For administrative purposes, the IELC is divided
               into three Synods &mdash; the Ambur Synod, the Nagercoil Synod, and the Tirunelveli Synod.
-            </p>
-            <p>
               The IELC was founded as a result of missionary work done in India by the Lutheran Church&ndash;Missouri
               Synod (LC-MS) in the United States. It was officially registered under the Company Registration
               Act of 1860, under its present name.
-            </p>
-            <p>
               The core of the IELC's mission is the Concordia Theological Seminary in Nagercoil, established
               in 1924 to train pastors for the Tamil- and Malayalam-speaking congregations. From October 2025,
               the IELC is headed by its President, Rev. Dr. M. Mohanan.
@@ -58,7 +54,7 @@ export default function Home(){
       <section className="section">
         <div className="container">
           <span className="eyebrow">Structure</span>
-          <h2>One Synod, Five Circles</h2>
+          <h2>Synod and Circles</h2>
           <p>
             The Nagercoil Synod is organised into five circles, each overseeing a number of
             pastorates and congregations across the region.

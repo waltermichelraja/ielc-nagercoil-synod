@@ -9,7 +9,7 @@ export default function Overview(){
         <div className="container">
           <span className="eyebrow">The Synod at a Glance</span>
           <h1>Overview</h1>
-          <p>{overview.description}</p>
+          {/* <p>{overview.description}</p> */}
 
           <div className="stat-row">
             <div><span className="stat-number">{overview.circles}</span><span className="stat-label">Circles</span></div>
