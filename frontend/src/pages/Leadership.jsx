@@ -16,7 +16,7 @@ export default function Leadership() {
       <section className="section">
         <div className="container">
           <span className="eyebrow">Leadership</span>
-          <h1>Synod Bearers</h1>
+          <h1>Synod Office Bearers</h1>
           <p>Office bearers of the Nagercoil Synod.</p>
 
           <div className="card-grid">
