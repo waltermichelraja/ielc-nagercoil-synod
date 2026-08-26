@@ -1,15 +1,63 @@
 {
+  "upcomingEvents": [
+    {
+      "title": "குரு அபிஷேக ஆராதனை அழைப்பிதழ்",
+      "date": "2026-08-05",
+      "description": "celebrating the spiritual dedication and commissioning of pastors for ministry in Nagercoil.",
+      "image": "/images/events/event1.jpg"
+    }
+  ],
   "synodEvents": [
-    { "title": "[Synod Event Title]", "date": "2026-01-01", "description": "Placeholder description of a synod-wide event.", "image": "/images/placeholder-event.svg" }
+    {
+      "title": "[Upcoming Synod Event Title]",
+      "date": "2026-01-01",
+      "description": "Placeholder description of a synod-wide event.",
+      "image": "/images/placeholder-event.svg"
+    }
   ],
   "circleEvents": [
-    { "circle": "Colachel Circle", "title": "[Event Title]", "date": "2026-01-01", "description": "Placeholder description.", "image": "/images/placeholder-event.svg" },
-    { "circle": "Madurai Circle", "title": "[Event Title]", "date": "2026-01-01", "description": "Placeholder description.", "image": "/images/placeholder-event.svg" },
-    { "circle": "Nagercoil Circle", "title": "[Event Title]", "date": "2026-01-01", "description": "Placeholder description.", "image": "/images/placeholder-event.svg" },
-    { "circle": "Thovalai Circle", "title": "[Event Title]", "date": "2026-01-01", "description": "Placeholder description.", "image": "/images/placeholder-event.svg" },
-    { "circle": "Tirunelveli Circle", "title": "[Event Title]", "date": "2026-01-01", "description": "Placeholder description.", "image": "/images/placeholder-event.svg" }
+    {
+      "circle": "Colachel Circle",
+      "title": "[Event Title]",
+      "date": "2026-01-01",
+      "description": "Placeholder description.",
+      "image": "/images/placeholder-event.svg"
+    },
+    {
+      "circle": "Madurai Circle",
+      "title": "[Event Title]",
+      "date": "2026-01-01",
+      "description": "Placeholder description.",
+      "image": "/images/placeholder-event.svg"
+    },
+    {
+      "circle": "Nagercoil Circle",
+      "title": "[Event Title]",
+      "date": "2026-01-01",
+      "description": "Placeholder description.",
+      "image": "/images/placeholder-event.svg"
+    },
+    {
+      "circle": "Thovalai Circle",
+      "title": "[Event Title]",
+      "date": "2026-01-01",
+      "description": "Placeholder description.",
+      "image": "/images/placeholder-event.svg"
+    },
+    {
+      "circle": "Tirunelveli Circle",
+      "title": "[Event Title]",
+      "date": "2026-01-01",
+      "description": "Placeholder description.",
+      "image": "/images/placeholder-event.svg"
+    }
   ],
   "schoolEvents": [
-    { "title": "[School Event Title]", "date": "2026-01-01", "description": "Placeholder description of a school-related event.", "image": "/images/placeholder-event.svg" }
+    {
+      "title": "[School Event Title]",
+      "date": "2026-01-01",
+      "description": "Placeholder description of a school-related event.",
+      "image": "/images/placeholder-event.svg"
+    }
   ]
 }

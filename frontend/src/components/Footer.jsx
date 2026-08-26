@@ -1,43 +1,41 @@
-import { Link } from "react-router-dom";
-import site from "../data/site.js";
+import{Link}from"react-router-dom";
+import site from"../data/site.js";
 
-export default function Footer() {
-  const year = new Date().getFullYear();
+export default function Footer(){
+  const year=new Date().getFullYear();
+  const{contact}=site;
 
-  return (
+  return(
     <footer className="site-footer">
       <div className="container">
         <div className="footer-grid">
           <div>
             <h4>{site.shortTitle}</h4>
             <p>
-              {site.contact.officeName}
-              <br />
-              {site.contact.address}
+              {contact.officeName}
+              <br/>
+              {contact.address}
             </p>
           </div>
           <div>
             <h4>Contact</h4>
             <p>
-              Email: <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
-              <br />
-              Phone: {site.contact.phone}
+              {contact.email&&<>Email: <a href={`mailto:${contact.email}`}>{contact.email}</a></>}
+              {contact.email&&contact.phone&&<br/>}
+              {contact.phone&&<>Phone: {contact.phone}</>}
+              {!contact.email&&!contact.phone&&<>Contact details will be updated when an email address or phone number is provided.</>}
             </p>
           </div>
           <div>
             <h4>Explore</h4>
             <p>
               <Link to="/events">Events</Link>
-              <br />
+              <br/>
               <Link to="/overview">Synod Overview</Link>
-              <br />
-              <Link to="/congregations">Congregations</Link>
             </p>
           </div>
         </div>
-        <div className="footer-bottom">
-          &copy; {year} {site.title}. All rights reserved.
-        </div>
+        <div className="footer-bottom">&copy; {year} {site.title}. All rights reserved.</div>
       </div>
     </footer>
   );
