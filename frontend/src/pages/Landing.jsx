@@ -83,8 +83,12 @@ export default function Landing(){
         <h1>Welcome to the <br/>{site.shortTitle}</h1>
         <p className="landing-tagline" style={{fontSize:"1.3rem",fontWeight:400,letterSpacing:"0.025em",lineHeight:1.5,marginTop:"0.35rem"}}>{site.tagline}</p>
         {landing.motto&&(
-          <p className="landing-motto" style={{fontFamily:"Georgia,\"Times New Roman\",serif",fontSize:"clamp(1.45rem,3vw,2rem)",fontWeight:800,letterSpacing:"0.05em",lineHeight:1.3,marginTop:"0.65rem",whiteSpace:"nowrap",textShadow:"0 2px 3px rgba(0,0,0,0.2)"}}>
-            {landing.motto}
+          <p className="landing-motto" style={{fontFamily:"Georgia,\"Times New Roman\",serif",fontSize:"clamp(1.45rem,3vw,2rem)",fontWeight:800,letterSpacing:"0.05em",lineHeight:1.3,marginTop:"0.65rem",textShadow:"0 2px 3px rgba(0,0,0,0.2)"}}>
+            {landing.motto.split(", ").map((phrase,i,arr)=>(
+              <span key={phrase} className="motto-phrase">
+                {phrase}{i<arr.length-1?",":""}{i<arr.length-1?" ":""}
+              </span>
+            ))}
           </p>
         )}
         <Link to="/home" className="btn landing-explore">Explore</Link>
