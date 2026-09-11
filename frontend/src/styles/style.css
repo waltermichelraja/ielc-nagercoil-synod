@@ -734,3 +734,8 @@ form.contact-form {
   .landing-topbar { padding: var(--space-2); }
   .landing-social { gap: var(--space-1); }
 }
+
+.motto-phrase {
+  white-space: nowrap;
+  display: inline-block;
+}
