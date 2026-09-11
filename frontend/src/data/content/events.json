@@ -9,10 +9,22 @@
   ],
   "synodEvents": [
     {
-      "title": "[Upcoming Synod Event Title]",
-      "date": "2026-01-01",
-      "description": "Placeholder description of a synod-wide event.",
-      "image": "/images/placeholder-event.svg"
+      "title": "குரு அபிஷேக ஆராதனை - 2026",
+      "date": "2026-08-05",
+      "description": "நாகர்கோவில் சபை சங்கம்  -  குரு அபிஷேக ஆராதனை - 2026 ",
+      "image": "/images/events/1.jpeg"
+    },
+    {
+      "title": "Pastors Committee Meeting ",
+      "date": "Aug - 2026",
+      "description": "Nagercoil Synod Pastors committee meeting",
+      "image": "/images/events/2.jpeg"
+    },
+    {
+      "title": "IELC Constitutional Amendment Meeting",
+      "date": "2026-09-04",
+      "description": "",
+      "image": "/images/events/ielcconstitutionalamendmentmeeting.jpeg"
     }
   ],
   "circleEvents": [
