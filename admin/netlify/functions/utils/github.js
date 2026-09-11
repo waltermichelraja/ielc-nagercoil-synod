@@ -90,10 +90,25 @@ async function putFile({ path, contentBase64, message, sha }) {
   return { sha: data.content.sha };
 }
 
+// Delete a file from the repository. The current sha is required by GitHub.
+async function deleteFile({ path, sha, message }) {
+  const { owner, repo, branch } = repoInfo();
+  if (!sha) throw new Error("A file sha is required to delete a file.");
+
+  await githubRequest(
+    `/repos/${owner}/${repo}/contents/${encodeURIComponentPath(path)}`,
+    {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message, sha, branch }),
+    }
+  );
+}
+
 // Path segments need encoding individually — encodeURIComponent would also
 // escape the "/" separators, which GitHub's API needs intact.
 function encodeURIComponentPath(path) {
   return path.split("/").map(encodeURIComponent).join("/");
 }
 
-export { getFile, putFile, repoInfo };
+export { getFile, putFile, deleteFile, repoInfo };

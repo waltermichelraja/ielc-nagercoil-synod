@@ -51,6 +51,15 @@ export default function EditContent() {
       const result = await saveContent(section.path, content, sha);
       setSha(result.sha);
       setSavedAt(new Date());
+
+      if (result.imageDeleteErrors?.length) {
+        const details = result.imageDeleteErrors
+          .map((item) => `${item.path}: ${item.error}`)
+          .join("\n");
+        setError(
+          `The event data was saved, but one or more old event images could not be deleted.\n${details}`
+        );
+      }
     } catch (err) {
       setError(err.message);
     } finally {
