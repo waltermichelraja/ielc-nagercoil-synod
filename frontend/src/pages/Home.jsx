@@ -1,24 +1,12 @@
 import{Link}from"react-router-dom";
 import overview from"../data/overview.js";
 import HierarchyDiagram from"../components/HierarchyDiagram.jsx";
-import martinLutherGold from"/images/martin-luther-gold.png";
+import EventSlideshow from"../components/EventSlideshow.jsx";
 
 export default function Home(){
   return(
     <>
-      <section
-        className="hero"
-        style={{
-          minHeight:"420px",
-          backgroundImage:`linear-gradient(rgba(19,54,67,0.2),rgba(19,54,67,0.2)),url(${martinLutherGold})`,
-          backgroundSize:"auto 92%",
-          backgroundPosition:"center",
-          backgroundColor:"#133643",
-          backgroundRepeat:"no-repeat"
-        }}
-        aria-label="Martin Luther background"
-      />
-
+      <EventSlideshow/>
       <section className="section">
         <div className="container">
           {/* <span className="eyebrow">About</span> */}
