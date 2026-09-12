@@ -1,12 +1,11 @@
 import { deleteFile, getFile, putFile } from "./utils/github.js";
 import { json, requireUser } from "./utils/http.js";
 
-// POST /.netlify/functions/save-content
-// Body: { path, content, sha }
-// Commits the updated JSON back to GitHub. Requires the `sha` of the
-// version the admin loaded — if someone else saved in the meantime, GitHub
-// will reject the write with a 409 instead of silently overwriting them,
-// and we surface that back to the admin as a clear "please reload" message.
+
+const IMAGE_PREFIXES_BY_PATH = {
+  "frontend/src/data/content/events.json": ["/images/events/"],
+  "frontend/src/data/content/synodBearers.json": ["/images/people/"],
+};
 
 export async function handler(event, context) {
   try {
@@ -30,11 +29,9 @@ export async function handler(event, context) {
 
     const editorName = user.user_metadata?.full_name || user.email || "Admin";
 
-    // For the Events section, determine which event images disappeared from
-    // the content before saving. Images are deleted only after the JSON save
-    // succeeds, and only when the new content no longer references them.
-    let eventImagesToDelete = [];
-    if (path === "frontend/src/data/content/events.json") {
+    let imagesToDelete = [];
+    const imagePrefixes = IMAGE_PREFIXES_BY_PATH[path];
+    if (imagePrefixes) {
       const current = await getFile(path);
       if (!current || current.sha !== sha) {
         return json(409, {
@@ -44,9 +41,9 @@ export async function handler(event, context) {
       }
 
       const oldContent = decodeJsonContent(current.contentBase64);
-      const oldImages = collectEventImages(oldContent);
-      const newImages = collectEventImages(content);
-      eventImagesToDelete = [...oldImages].filter((image) => !newImages.has(image));
+      const oldImages = collectImagePaths(oldContent, imagePrefixes);
+      const newImages = collectImagePaths(content, imagePrefixes);
+      imagesToDelete = [...oldImages].filter((image) => !newImages.has(image));
     }
 
     try {
@@ -60,16 +57,16 @@ export async function handler(event, context) {
       const deletedImages = [];
       const imageDeleteErrors = [];
 
-      for (const imagePath of eventImagesToDelete) {
+      for (const imagePath of imagesToDelete) {
         try {
-          const repoPath = publicEventImageToRepoPath(imagePath);
+          const repoPath = publicImagePathToRepoPath(imagePath, imagePrefixes);
           const imageFile = await getFile(repoPath);
           if (!imageFile) continue;
 
           await deleteFile({
             path: repoPath,
             sha: imageFile.sha,
-            message: `content: remove unused event image ${repoPath.split("/").pop()} (via admin, by ${editorName})`,
+            message: `content: remove unused image ${repoPath.split("/").pop()} (via admin, by ${editorName})`,
           });
           deletedImages.push(imagePath);
         } catch (err) {
@@ -77,11 +74,7 @@ export async function handler(event, context) {
         }
       }
 
-      return json(200, {
-        sha: result.sha,
-        deletedImages,
-        imageDeleteErrors,
-      });
+      return json(200, { sha: result.sha, deletedImages, imageDeleteErrors });
     } catch (err) {
       if (err.status === 409) {
         return json(409, {
@@ -97,42 +90,37 @@ export async function handler(event, context) {
 }
 
 function isAllowedContentPath(path) {
-  return (
-    path.startsWith("frontend/src/data/content/") && path.endsWith(".json")
-  );
+  return path.startsWith("frontend/src/data/content/") && path.endsWith(".json");
 }
 
 function shortName(path) {
   return path.split("/").pop();
 }
+
 function decodeJsonContent(contentBase64) {
   try {
     return JSON.parse(Buffer.from(contentBase64, "base64").toString("utf-8"));
   } catch {
-    throw new Error("The current events content could not be read safely.");
+    throw new Error("The current file content could not be read safely.");
   }
 }
 
-function collectEventImages(content) {
-  const images = new Set();
-  const groups = ["upcomingEvents", "synodEvents", "circleEvents", "schoolEvents"];
-
-  for (const group of groups) {
-    const events = Array.isArray(content?.[group]) ? content[group] : [];
-    for (const event of events) {
-      if (typeof event?.image === "string" && event.image.startsWith("/images/events/")) {
-        images.add(event.image);
-      }
-    }
+function collectImagePaths(value, prefixes, found = new Set()) {
+  if (typeof value === "string") {
+    if (prefixes.some((prefix) => value.startsWith(prefix))) found.add(value);
+  } else if (Array.isArray(value)) {
+    for (const item of value) collectImagePaths(item, prefixes, found);
+  } else if (value && typeof value === "object") {
+    for (const key of Object.keys(value)) collectImagePaths(value[key], prefixes, found);
   }
-
-  return images;
+  return found;
 }
 
-function publicEventImageToRepoPath(publicPath) {
-  if (!/^\/images\/events\/[a-zA-Z0-9._%+-]+$/.test(publicPath)) {
-    throw new Error(`Unsafe event image path: ${publicPath}`);
+function publicImagePathToRepoPath(publicPath, prefixes) {
+  const prefix = prefixes.find((p) => publicPath.startsWith(p));
+  const rest = prefix ? publicPath.slice(prefix.length) : null;
+  if (!prefix || !/^[a-zA-Z0-9._%+-]+$/.test(rest || "")) {
+    throw new Error(`Unsafe image path: ${publicPath}`);
   }
   return `frontend/public${publicPath}`;
 }
-
