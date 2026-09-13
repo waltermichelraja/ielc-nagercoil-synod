@@ -1,3 +1,4 @@
+import crypto from "node:crypto";
 import { getFile, putFile } from "./utils/github.js";
 import { json, requireUser } from "./utils/http.js";
 
@@ -11,7 +12,7 @@ import { json, requireUser } from "./utils/http.js";
 // target branch and returns the public path the frontend can reference,
 // e.g. "/images/people/sathianathan.png".
 
-const MAX_BYTES = 6 * 1024 * 1024; // 6MB — headroom for 1920px-wide event/hero photos
+const MAX_BYTES = 6 * 1024 * 1024;
 
 export async function handler(event, context) {
   try {
@@ -49,9 +50,13 @@ export async function handler(event, context) {
       });
     }
 
+    const buffer = Buffer.from(base64Data, "base64");
+    const contentHash = crypto.createHash("sha256").update(buffer).digest("hex").slice(0, 10);
+    const storedFilename = withHashSuffix(safeFilename, contentHash);
+
     const repoPath = safeFolder
-      ? `frontend/public/images/${safeFolder}/${safeFilename}`
-      : `frontend/public/images/${safeFilename}`;
+      ? `frontend/public/images/${safeFolder}/${storedFilename}`
+      : `frontend/public/images/${storedFilename}`;
 
     const existing = await getFile(repoPath);
     const editorName = user.user_metadata?.full_name || user.email || "Admin";
@@ -60,16 +65,23 @@ export async function handler(event, context) {
       path: repoPath,
       contentBase64: base64Data,
       sha: existing?.sha,
-      message: `content: ${existing ? "update" : "add"} image ${safeFilename} (via admin, by ${editorName})`,
+      message: `content: ${existing ? "update" : "add"} image ${storedFilename} (via admin, by ${editorName})`,
     });
 
     return json(200, {
       sha: result.sha,
-      publicPath: safeFolder ? `/images/${safeFolder}/${safeFilename}` : `/images/${safeFilename}`,
+      publicPath: safeFolder ? `/images/${safeFolder}/${storedFilename}` : `/images/${storedFilename}`,
     });
   } catch (err) {
     return json(err.statusCode || 500, { error: err.message || "Unexpected error." });
   }
+}
+
+function withHashSuffix(filename, hash) {
+  const dotIndex = filename.lastIndexOf(".");
+  const base = filename.slice(0, dotIndex);
+  const ext = filename.slice(dotIndex);
+  return `${base}-${hash}${ext}`;
 }
 
 function sanitizeSegment(segment) {
