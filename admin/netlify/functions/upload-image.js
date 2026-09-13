@@ -11,7 +11,7 @@ import { json, requireUser } from "./utils/http.js";
 // target branch and returns the public path the frontend can reference,
 // e.g. "/images/people/sathianathan.png".
 
-const MAX_BYTES = 3 * 1024 * 1024; // 3MB — plenty for a compressed photo
+const MAX_BYTES = 6 * 1024 * 1024; // 6MB — headroom for 1920px-wide event/hero photos
 
 export async function handler(event, context) {
   try {

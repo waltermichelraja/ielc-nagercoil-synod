@@ -35,7 +35,12 @@ async function saveContent(path, content, sha) {
 
 const PHOTO_FOLDERS = new Set(["people", "events"]);
 
-async function uploadImage(file, folder, maxWidth = 800) {
+const MAX_WIDTH_BY_FOLDER = {
+  people: 800,
+  events: 1920,
+};
+
+async function uploadImage(file, folder, maxWidth = MAX_WIDTH_BY_FOLDER[folder] ?? 800) {
   const isSvg = file.type === "image/svg+xml";
   const outputType = isSvg ? file.type : PHOTO_FOLDERS.has(folder) ? "image/jpeg" : file.type;
 
@@ -81,7 +86,7 @@ function resizeImage(file, maxWidth, outputType) {
       canvas.toBlob(
         (blob) => {
           if (!blob) {
-            resolve(file); // fall back to original if canvas export fails
+            resolve(file);
             return;
           }
           resolve(new File([blob], renameExtension(file.name, outputType), { type: outputType }));
