@@ -60,7 +60,7 @@ export default function Circulars(){
         <div className="container">
           <span className="eyebrow">Official Notices</span>
           <h1>Circulars</h1>
-          <p className="circulars-intro">Circulars, notices, opportunities and official information from the IELC Nagercoil Synod.</p>
+          <p className="circulars-intro">Circulars, opportunities and official information from the IELC Nagercoil Synod.</p>
           {items.length===0?<p className="circulars-empty">No circulars have been published yet.</p>:(
             <div className="circular-list">
               {items.map((item,index)=>(

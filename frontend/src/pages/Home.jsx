@@ -60,6 +60,11 @@ export default function Home(){
               <Link to="/message">View messages &rarr;</Link>
             </div>
             <div className="card">
+              <h3>Circulars</h3>
+              <p>Latest circulars and official information from the Synod and Circles.</p>
+              <Link to="/circulars">View circulars &rarr;</Link>
+            </div>
+            <div className="card">
               <h3>Events</h3>
               <p>Upcoming and recent events across the Synod, Circles, and Schools.</p>
               <Link to="/events">View events &rarr;</Link>
