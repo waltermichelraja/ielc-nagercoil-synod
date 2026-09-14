@@ -299,7 +299,7 @@ nav.main-nav a[aria-current="page"] {
 .message-index{flex:0 0 auto;font-family:var(--font-mono);font-size:.72rem;line-height:1.4;letter-spacing:.08em;color:var(--color-laterite);padding-top:.35rem}
 .message-heading h2{font-size:clamp(1.35rem,2.4vw,1.9rem);line-height:1.15;margin-bottom:.5rem}
 .message-author{margin:0;font-family:var(--font-mono);font-size:.74rem;line-height:1.5;letter-spacing:.05em;text-transform:uppercase;color:var(--color-palmyra)}
-.message-content{max-width:72ch;white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--font-body);font-size:1rem;line-height:1.8;color:var(--color-ink)}
+.message-content{max-width:none;width:100%;white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--font-body);font-size:1rem;line-height:1.8;color:var(--color-ink)}
 @media(max-width:720px){.message-entry{grid-template-columns:1fr;gap:var(--space-2);padding:var(--space-3) 0}.message-heading h2{font-size:1.45rem}.message-content{font-size:.98rem;line-height:1.75}}
 
 /* ---------- Circulars ---------- */
