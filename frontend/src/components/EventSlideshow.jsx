@@ -1,7 +1,7 @@
 import{useEffect,useState}from"react";
 import eventImages from"../data/eventImages.js";
 
-const SLIDE_DURATION=5000;
+const SLIDE_DURATION=10000;
 
 export default function EventSlideshow(){
   const[index,setIndex]=useState(0);

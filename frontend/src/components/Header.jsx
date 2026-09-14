@@ -8,7 +8,7 @@ export const NAV_ITEMS=[
   {to:"/circulars",label:"Circulars"},
   {to:"/events",label:"Events"},
   {to:"/overview",label:"Overview"},
-  {to:"/leadership",label:"Synod Office Bearers"},
+  {to:"/leadership",label:"Office Bearers"},
   {to:"/contact",label:"Contact"},
 ];
 
