@@ -6,6 +6,7 @@ import Landing from"./pages/Landing.jsx";
 import Home from"./pages/Home.jsx";
 import Message from"./pages/Message.jsx";
 import Events from"./pages/Events.jsx";
+import Circulars from"./pages/Circulars.jsx";
 import Overview from"./pages/Overview.jsx";
 import Leadership from"./pages/Leadership.jsx";
 import Contact from"./pages/Contact.jsx";
@@ -26,6 +27,7 @@ function usePageTitle(){
       "/":undefined,
       "/home":"Home",
       "/message":"Message",
+      "/circulars":"Circulars",
       "/events":"Events",
       "/overview":"Overview",
       "/leadership":"Admin",
@@ -55,6 +57,7 @@ function AppRoutes(){
         <Route path="/home" element={<Home/>}/>
         <Route path="/message" element={<Message/>}/>
         <Route path="/events" element={<Events/>}/>
+        <Route path="/circulars" element={<Circulars/>}/>
         <Route path="/overview" element={<Overview/>}/>
         <Route path="/leadership" element={<Leadership/>}/>
         <Route path="/contact" element={<Contact/>}/>
