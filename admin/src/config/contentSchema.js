@@ -289,18 +289,18 @@ const CONTENT_SECTIONS = [
     schema: messagesSchema,
   },
   {
-    key: "events",
-    label: "Events",
-    description: "Upcoming, Synod, Circle, and School events.",
-    path: "frontend/src/data/content/events.json",
-    schema: eventsSchema,
-  },
-  {
     key: "circulars",
     label: "Circulars",
     description: "Official circulars, notices, job posts, news, and other announcements.",
     path: "frontend/src/data/content/circulars.json",
     schema: circularsSchema,
+  },
+  {
+    key: "events",
+    label: "Events",
+    description: "Upcoming, Synod, Circle, and School events.",
+    path: "frontend/src/data/content/events.json",
+    schema: eventsSchema,
   },
   {
     key: "synodBearers",
