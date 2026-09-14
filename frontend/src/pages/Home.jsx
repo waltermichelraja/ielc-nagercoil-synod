@@ -57,7 +57,7 @@ export default function Home(){
             <div className="card">
               <h3>Message</h3>
               <p>Read greetings from the President, Vice President, and other office bearers.</p>
-              <Link to="/message">View messages &rarr;</Link>
+              <Link to="/messages">View messages &rarr;</Link>
             </div>
             <div className="card">
               <h3>Circulars</h3>

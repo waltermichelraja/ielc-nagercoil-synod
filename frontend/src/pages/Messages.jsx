@@ -5,7 +5,7 @@ export default function Message(){
     <section className="section message-section">
       <div className="container">
         <span className="eyebrow">Voices of the Synod</span>
-        <h1>Message</h1>
+        <h1>Messages</h1>
         <p className="message-intro">Greetings and reflections from the Synod's leadership.</p>
         <div className="messages-list">
           {messages.map((msg,i)=>(

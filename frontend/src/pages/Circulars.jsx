@@ -32,8 +32,8 @@ function CircularModal({item,onClose}){
       <div className="circular-modal-panel" onClick={(event)=>event.stopPropagation()}>
         <button type="button" className="circular-modal-close" onClick={onClose} aria-label="Close circular">×</button>
         <div className="circular-modal-meta">
-          <span>＊ {formatDate(item.date)}</span>
-          <span>＊ {(item.category||"GENERAL").toUpperCase()}</span>
+          <span>{formatDate(item.date)}</span>
+          <span>{(item.category||"GENERAL").toUpperCase()}</span>
         </div>
         <h2 id="circular-modal-title">{item.subject}</h2>
         {item.message&&<div className="circular-modal-message">{item.message}</div>}
@@ -66,8 +66,8 @@ export default function Circulars(){
               {items.map((item,index)=>(
                 <article className="circular-item" key={`${item.date||""}-${item.subject||""}-${index}`}>
                   <div className="circular-meta">
-                    <span>＊ {formatDate(item.date)}</span>
-                    <span>＊ {(item.category||"GENERAL").toUpperCase()}</span>
+                    <span>{formatDate(item.date)}</span>
+                    <span>{(item.category||"GENERAL").toUpperCase()}</span>
                   </div>
                   <button type="button" className="circular-subject" onClick={()=>setSelected(item)}>{item.subject}</button>
                 </article>

@@ -4,7 +4,7 @@ import site from"../data/site.js";
 
 export const NAV_ITEMS=[
   {to:"/home",label:"Home",end:true},
-  {to:"/message",label:"Message"},
+  {to:"/messages",label:"Messages"},
   {to:"/circulars",label:"Circulars"},
   {to:"/events",label:"Events"},
   {to:"/overview",label:"Overview"},
