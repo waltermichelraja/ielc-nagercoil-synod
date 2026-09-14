@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "subject": "test circular",
+    "message": "new placeholder content",
+    "attachment": "/images/circulars/placeholder-event-4f8f314bc8.svg",
+    "date": "2026-09-15T01:42",
+    "category": "GENERAL"
+  }
+]
