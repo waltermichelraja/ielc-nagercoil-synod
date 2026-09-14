@@ -1,4 +1,5 @@
 import ImageUploadField from "./ImageUploadField.jsx";
+import FileUploadField from "./FileUploadField.jsx";
 
 // Renders one schema field, recursing into objects and lists as needed.
 // This one component (plus the two helpers below) is what turns the
@@ -31,6 +32,32 @@ export default function FieldRenderer({ field, value, onChange }) {
             onChange={(e) => onChange(e.target.value === "" ? "" : Number(e.target.value))}
           />
         </label>
+      );
+
+    case "datetime":
+      return (
+        <label className="field">
+          <span className="field-label">{field.label}</span>
+          <input type="datetime-local" value={value ?? ""} onChange={(e) => onChange(e.target.value)} />
+        </label>
+      );
+
+    case "select":
+      return (
+        <label className="field">
+          <span className="field-label">{field.label}</span>
+          <select value={value ?? ""} onChange={(e) => onChange(e.target.value)}>
+            {(field.options || []).map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+          </select>
+        </label>
+      );
+
+    case "attachment":
+      return (
+        <div className="field">
+          <span className="field-label">{field.label}</span>
+          <FileUploadField folder={field.folder} value={value} onChange={onChange} accept={field.accept} />
+        </div>
       );
 
     case "image":
@@ -185,12 +212,21 @@ function TextListEditor({ label, value, onChange }) {
 
 // Produces a blank starting value for a brand-new list item, matching the
 // item's schema shape so nested fields render correctly right away.
+function currentLocalDateTime() {
+  const now = new Date();
+  const offset = now.getTimezoneOffset();
+  const local = new Date(now.getTime() - offset * 60000);
+  return local.toISOString().slice(0,16);
+}
+
 function emptyValueFor(schema) {
   if (schema.type === "object") {
     const obj = {};
     schema.fields.forEach((f) => {
       if (f.type === "list" || f.type === "list-text") obj[f.key] = [];
       else if (f.type === "object") obj[f.key] = emptyValueFor(f);
+      else if (f.type === "select") obj[f.key] = f.options?.[0]?.value || "";
+      else if (f.type === "datetime") obj[f.key] = currentLocalDateTime();
       else obj[f.key] = "";
     });
     return obj;

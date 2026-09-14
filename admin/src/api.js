@@ -1,129 +1,14 @@
-import { getToken } from "./identity.js";
+import{getToken}from"./identity.js";
 
-async function authHeaders() {
-  const token = await getToken();
-  if (!token) throw new Error("You're not signed in. Please log in and try again.");
-  return { Authorization: `Bearer ${token}` };
-}
-
-async function handleResponse(res) {
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok) {
-    throw new Error(data.error || `Request failed (${res.status})`);
-  }
-  return data;
-}
-
-async function getContent(path) {
-  const headers = await authHeaders();
-  const res = await fetch(
-    `/.netlify/functions/get-content?path=${encodeURIComponent(path)}`,
-    { headers }
-  );
-  return handleResponse(res);
-}
-
-async function saveContent(path, content, sha) {
-  const headers = await authHeaders();
-  const res = await fetch("/.netlify/functions/save-content", {
-    method: "POST",
-    headers: { ...headers, "Content-Type": "application/json" },
-    body: JSON.stringify({ path, content, sha }),
-  });
-  return handleResponse(res);
-}
-
-const PHOTO_FOLDERS = new Set(["people", "events"]);
-
-const MAX_WIDTH_BY_FOLDER = {
-  people: 800,
-  events: 1920,
-};
-
-async function uploadImage(file, folder, maxWidth = MAX_WIDTH_BY_FOLDER[folder] ?? 800) {
-  const isSvg = file.type === "image/svg+xml";
-  const outputType = isSvg ? file.type : PHOTO_FOLDERS.has(folder) ? "image/jpeg" : file.type;
-
-  const processedFile = isSvg ? file : await resizeImage(file, maxWidth, outputType);
-  const dataUrl = await fileToDataUrl(processedFile);
-  const headers = await authHeaders();
-  const res = await fetch("/.netlify/functions/upload-image", {
-    method: "POST",
-    headers: { ...headers, "Content-Type": "application/json" },
-    body: JSON.stringify({ folder, filename: processedFile.name, dataUrl }),
-  });
-  return handleResponse(res);
-}
-
-function resizeImage(file, maxWidth, outputType) {
-  return new Promise((resolve) => {
-    const img = new Image();
-    const objectUrl = URL.createObjectURL(file);
-
-    img.onload = () => {
-      URL.revokeObjectURL(objectUrl);
-
-      const needsResize = img.width > maxWidth;
-      const needsReencode = outputType !== file.type;
-
-      if (!needsResize && !needsReencode) {
-        resolve(file);
-        return;
-      }
-
-      const scale = needsResize ? maxWidth / img.width : 1;
-      const canvas = document.createElement("canvas");
-      canvas.width = needsResize ? maxWidth : img.width;
-      canvas.height = Math.round(img.height * scale);
-
-      const ctx = canvas.getContext("2d");
-      if (outputType === "image/jpeg") {
-        ctx.fillStyle = "#ffffff";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-      }
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-      canvas.toBlob(
-        (blob) => {
-          if (!blob) {
-            resolve(file);
-            return;
-          }
-          resolve(new File([blob], renameExtension(file.name, outputType), { type: outputType }));
-        },
-        outputType,
-        0.85
-      );
-    };
-
-    img.onerror = () => {
-      URL.revokeObjectURL(objectUrl);
-      resolve(file);
-    };
-
-    img.src = objectUrl;
-  });
-}
-
-const EXTENSION_BY_MIME_TYPE = {
-  "image/jpeg": "jpg",
-  "image/png": "png",
-  "image/webp": "webp",
-};
-
-function renameExtension(filename, mimeType) {
-  const ext = EXTENSION_BY_MIME_TYPE[mimeType] || "jpg";
-  const base = filename.replace(/\.[a-zA-Z0-9]+$/, "");
-  return `${base}.${ext}`;
-}
-
-function fileToDataUrl(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
-
-export { getContent, saveContent, uploadImage };
+async function authHeaders(){const token=await getToken();if(!token)throw new Error("You're not signed in. Please log in and try again.");return{Authorization:`Bearer ${token}`};}
+async function handleResponse(res){const data=await res.json().catch(()=>({}));if(!res.ok)throw new Error(data.error||`Request failed (${res.status})`);return data;}
+async function getContent(path){const headers=await authHeaders();const res=await fetch(`/.netlify/functions/get-content?path=${encodeURIComponent(path)}`,{headers});return handleResponse(res);}
+async function saveContent(path,content,sha){const headers=await authHeaders();const res=await fetch("/.netlify/functions/save-content",{method:"POST",headers:{...headers,"Content-Type":"application/json"},body:JSON.stringify({path,content,sha})});return handleResponse(res);}
+const PHOTO_FOLDERS=new Set(["people","events","circulars"]);
+const MAX_WIDTH_BY_FOLDER={people:800,events:1920,circulars:1920};
+async function uploadImage(file,folder,maxWidth=MAX_WIDTH_BY_FOLDER[folder]??800){const isPdf=file.type==="application/pdf";const isSvg=file.type==="image/svg+xml";const outputType=isPdf?file.type:isSvg?file.type:PHOTO_FOLDERS.has(folder)?"image/jpeg":file.type;const processedFile=isPdf||isSvg?file:await resizeImage(file,maxWidth,outputType);const dataUrl=await fileToDataUrl(processedFile);const headers=await authHeaders();const res=await fetch("/.netlify/functions/upload-image",{method:"POST",headers:{...headers,"Content-Type":"application/json"},body:JSON.stringify({folder,filename:processedFile.name,dataUrl})});return handleResponse(res);}
+function resizeImage(file,maxWidth,outputType){return new Promise((resolve)=>{const img=new Image();const objectUrl=URL.createObjectURL(file);img.onload=()=>{URL.revokeObjectURL(objectUrl);const needsResize=img.width>maxWidth;const needsReencode=outputType!==file.type;if(!needsResize&&!needsReencode){resolve(file);return;}const scale=needsResize?maxWidth/img.width:1;const canvas=document.createElement("canvas");canvas.width=needsResize?maxWidth:img.width;canvas.height=Math.round(img.height*scale);const ctx=canvas.getContext("2d");if(outputType==="image/jpeg"){ctx.fillStyle="#ffffff";ctx.fillRect(0,0,canvas.width,canvas.height);}ctx.drawImage(img,0,0,canvas.width,canvas.height);canvas.toBlob((blob)=>{if(!blob){resolve(file);return;}resolve(new File([blob],renameExtension(file.name,outputType),{type:outputType}));},outputType,0.85);};img.onerror=()=>{URL.revokeObjectURL(objectUrl);resolve(file);};img.src=objectUrl;});}
+const EXTENSION_BY_MIME_TYPE={"image/jpeg":"jpg","image/png":"png","image/webp":"webp"};
+function renameExtension(filename,mimeType){const ext=EXTENSION_BY_MIME_TYPE[mimeType]||"jpg";const base=filename.replace(/\.[a-zA-Z0-9]+$/,"");return`${base}.${ext}`;}
+function fileToDataUrl(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=reject;reader.readAsDataURL(file);});}
+export{getContent,saveContent,uploadImage};

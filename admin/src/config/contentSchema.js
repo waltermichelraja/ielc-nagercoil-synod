@@ -238,6 +238,24 @@ const circlesSchema = {
   itemSchema: circleSchema,
 };
 
+
+const circularItemSchema = {
+  type: "object",
+  fields: [
+    { key: "subject", label: "Subject", type: "text" },
+    { key: "message", label: "Message / Content", type: "textarea" },
+    { key: "attachment", label: "File attachment (PDF or image)", type: "attachment", folder: "circulars", accept: "application/pdf,image/png,image/jpeg,image/webp,image/svg+xml" },
+    { key: "date", label: "Date & time", type: "datetime" },
+    { key: "category", label: "Category", type: "select", options: [{ value: "GENERAL", label: "GENERAL" }] },
+  ],
+};
+
+const circularsSchema = {
+  type: "list",
+  itemLabel: "Circular",
+  itemSchema: circularItemSchema,
+};
+
 const overviewSchema = {
   type: "object",
   fields: [
@@ -276,6 +294,13 @@ const CONTENT_SECTIONS = [
     description: "Upcoming, Synod, Circle, and School events.",
     path: "frontend/src/data/content/events.json",
     schema: eventsSchema,
+  },
+  {
+    key: "circulars",
+    label: "Circulars",
+    description: "Official circulars, notices, job posts, news, and other announcements.",
+    path: "frontend/src/data/content/circulars.json",
+    schema: circularsSchema,
   },
   {
     key: "synodBearers",
