@@ -1,7 +1,7 @@
 import messages from "../data/messages.js";
 
 export default function Message(){
-  return (
+  return(
     <section className="section message-section">
       <div className="container">
         <span className="eyebrow">Voices of the Synod</span>
@@ -17,7 +17,7 @@ export default function Message(){
                   <p className="message-author">{msg.author}</p>
                 </div>
               </div>
-              <div className="message-content">{msg.text}</div>
+              <div className={`message-content${msg.role==="President's Message"?" message-president":msg.role==="Secretary's Message"?" message-secretary":""}`}>{msg.text}</div>
             </article>
           ))}
         </div>

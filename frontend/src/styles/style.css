@@ -290,6 +290,10 @@ nav.main-nav a[aria-current="page"] {
 
 .section-alt { background: var(--color-white); }
 
+/* ---------- Message fonts ---------- */
+@font-face{font-family:"Comic Neue";src:url("/fonts/ComicNeue-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Allura";src:url("/fonts/Allura-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+
 /* ---------- Messages ---------- */
 .message-section .container{max-width:var(--max-width)}
 .message-intro{max-width:65ch;margin-bottom:var(--space-4)}
@@ -299,8 +303,10 @@ nav.main-nav a[aria-current="page"] {
 .message-index{flex:0 0 auto;font-family:var(--font-mono);font-size:.72rem;line-height:1.4;letter-spacing:.08em;color:var(--color-laterite);padding-top:.35rem}
 .message-heading h2{font-size:clamp(1.35rem,2.4vw,1.9rem);line-height:1.15;margin-bottom:.5rem}
 .message-author{margin:0;font-family:var(--font-mono);font-size:.74rem;line-height:1.5;letter-spacing:.05em;text-transform:uppercase;color:var(--color-palmyra)}
-.message-content{max-width:none;width:100%;white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--font-body);font-size:1rem;line-height:1.8;color:var(--color-ink)}
-@media(max-width:720px){.message-entry{grid-template-columns:1fr;gap:var(--space-2);padding:var(--space-3) 0}.message-heading h2{font-size:1.45rem}.message-content{font-size:.98rem;line-height:1.75}}
+.message-content{max-width:none;width:100%;white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--font-body);font-size:1.1rem;line-height:1.85;color:var(--color-ink)}
+@media(max-width:720px){.message-entry{grid-template-columns:1fr;gap:var(--space-2);padding:var(--space-3) 0}.message-heading h2{font-size:1.45rem}.message-content{font-size:1.05rem;line-height:1.8}}
+.message-president{font-family:"Comic Neue",cursive !important; font-size:1.25rem;line-height:1.75;font-weight:500}
+.message-secretary{font-family:"Allura",cursive !important;font-size:1.80rem;line-height:1.75;font-weight:550}
 
 /* ---------- Circulars ---------- */
 .circulars-intro{max-width:70ch;color:#536164;margin-bottom:var(--space-4)}
