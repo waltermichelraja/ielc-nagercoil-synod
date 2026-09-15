@@ -36,25 +36,32 @@
       "image": "/images/placeholder-event.svg"
     },
     {
-      "circle": "Nagercoil Circle",
-      "title": "[Event Title]",
-      "date": "2026-01-01",
-      "description": "Placeholder description.",
-      "image": "/images/placeholder-event.svg"
-    },
-    {
       "circle": "Thovalai Circle",
       "title": "திருச்சபைகளை சந்தித்தல் ஊழியம் ",
       "date": "30.08.2026",
       "description": "காட்டுப்புத்தூர்- பரிசுத்த லூக்கா லுத்தரன் திருச்சபை ",
-      "image": "/images/placeholder-event.svg"
+      "image": "/images/events/churchvisitationministry-aug2026kattuputur-13a049f692.jpeg"
     },
     {
-      "circle": "Tirunelveli Circle",
-      "title": "[Event Title]",
-      "date": "2026-01-01",
-      "description": "Placeholder description.",
-      "image": "/images/placeholder-event.svg"
+      "circle": "Thovalai Circle",
+      "title": "விடுமுறை வேதகாமப்பள்ளி - 2026",
+      "date": "மே -2026",
+      "description": "வட்ட விடுமுறை வேதகாமப்பள்ளி நிறைவு நாள் விழா - 2026 \nசூழல் கோப்பை 1 ல் பரிசு - கீரன்குளம், பரிசுத்த மாற்கு லுத்தரன் திருச்சபை ",
+      "image": "/images/events/thovalaivbsrollingcup-2026-keerankulam-e68972c1ad.jpeg"
+    },
+    {
+      "circle": "Thovalai Circle",
+      "title": "விடுமுறை வேதகாமப்பள்ளி - 2026",
+      "date": "மே -2026",
+      "description": "வட்ட விடுமுறை வேதகாமப்பள்ளி நிறைவு நாள் விழா - 2026 \nசூழல் கோப்பை 2 ம் பரிசு - காட்டுப்புதூர் , பரிசுத்த லூக்கா லுத்தரன் திருச்சபை ",
+      "image": "/images/events/thovalaicirclevbsrollingcup-2026-kattuputhur-6350fddfa0.jpeg"
+    },
+    {
+      "circle": "Thovalai Circle",
+      "title": "விடுமுறை வேதகாமப்பள்ளி - 2026",
+      "date": "மே -2026",
+      "description": "வட்ட விடுமுறை வேதகாமப்பள்ளி நிறைவு நாள் விழா - 2026 \nசூழல் கோப்பை 3 ம் பரிசு - ஆரல்வாய்மொழி, நாசரேத்  லுத்தரன் திருச்சபை ",
+      "image": "/images/events/thovalaicirclevbsrollingcup-2026-aralvoimozhi-9f4d4ca14c.jpeg"
     }
   ],
   "schoolEvents": [
