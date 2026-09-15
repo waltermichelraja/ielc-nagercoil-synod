@@ -97,8 +97,7 @@ p { margin: 0 0 var(--space-2); text-align: justify; text-justify: inter-word; }
 nav.main-nav,nav.main-nav a,.nav-toggle,.btn,.eyebrow,
 .message-index,.message-author,.circular-meta,.circular-subject,
 .circular-modal-meta,.circular-modal-close,.circular-attachment-link,
-.hierarchy,.hierarchy-node,.hierarchy-tier-label,.hierarchy-synod,
-.hierarchy-circle,.stat-row,.stat-row .stat-number,.stat-row .stat-label,
+
 .data-table th,.landing-content h1,.landing-about,.landing-social,
 .landing-actions,.landing-icon-btn,.landing-search-form,.landing-search-form input,
 .landing-search-results,.landing-search-results a,.landing-drawer,
@@ -368,6 +367,8 @@ nav.main-nav a[aria-current="page"] {
 .section-alt .card { background: var(--color-mist); }
 
 .card h3 { margin-bottom: 0.25rem; }
+
+.card p { text-align:left; text-justify:auto; }
 
 .card .role { font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-palmyra); text-transform: uppercase; letter-spacing: 0.06em; }
 

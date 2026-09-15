@@ -246,7 +246,12 @@ const circularItemSchema = {
     { key: "message", label: "Message / Content", type: "textarea" },
     { key: "attachment", label: "File attachment (PDF or image)", type: "attachment", folder: "circulars", accept: "application/pdf,image/png,image/jpeg,image/webp,image/svg+xml" },
     { key: "date", label: "Date & time", type: "datetime" },
-    { key: "category", label: "Category", type: "select", options: [{ value: "GENERAL", label: "GENERAL" }] },
+    { key:"category",label:"Category",type:"select",options:[
+        { value:"ADMIN",label:"ADMIN" },
+        { value:"MINISTRY",label:"MINISTRY" },
+        { value:"EDUCATION",label:"EDUCATION" },
+        { value:"GENERAL",label:"GENERAL" }
+      ]},
   ],
 };
 
