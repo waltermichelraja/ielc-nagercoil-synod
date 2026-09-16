@@ -39,13 +39,13 @@ export default function Overview(){
               <div className="card" key={circle.slug}>
                 <h3>{circle.name}</h3>
                 <p>
-                  <strong>President:</strong> {circle.president}
+                  <strong>President:<br/></strong> {circle.president}
                   <br/>
-                  <strong>Vice President:</strong> {circle.vicePresident}
+                  <strong>Vice President:<br/></strong> {circle.vicePresident}
                   <br/>
-                  <strong>Secretary cum Treasurer:</strong> {circle.secretaryTreasurer}
+                  <strong>Secretary cum Treasurer:<br/></strong> {circle.secretaryTreasurer}
                   <br/>
-                  <strong>Joint Secretary:</strong> {circle.jointSecretary}
+                  <strong>Joint Secretary:<br/></strong> {circle.jointSecretary}
                 </p>
                 <a href={`/circles/${circle.slug}`}>View {circle.name} &rarr;</a>
               </div>

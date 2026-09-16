@@ -121,6 +121,14 @@
       "photo": "/images/people/rajan-9b03b48230.jpg"
     }
   ],
+  "officeStaffs":[
+    {
+      "name": "Mr. ABC",
+      "place": "Nagercoil",
+      "phone": "+91 12345 67890",
+      "photo": "/images/placeholder-person.svg"
+    }
+  ],
   "churchCouncilMembers": [
     {
       "name": "Mr. A. Regu Anantha Raj",

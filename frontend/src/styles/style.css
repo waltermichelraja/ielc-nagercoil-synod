@@ -362,6 +362,7 @@ nav.main-nav a[aria-current="page"] {
   border: 1px solid var(--color-mist-2);
   border-radius: var(--radius-md);
   padding: var(--space-3);
+  padding-bottom:var(--space-1);
 }
 
 .section-alt .card { background: var(--color-mist); }
@@ -373,10 +374,11 @@ nav.main-nav a[aria-current="page"] {
 .card .role { font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-palmyra); text-transform: uppercase; letter-spacing: 0.06em; }
 
 .person-photo {
-  width: 96px;
-  height: 96px;
+  width: 110px;
+  height: 140px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit:unset;
+  object-position: center;
   background: var(--color-mist-2);
   margin-bottom: var(--space-2);
   border: 2px solid var(--color-gold);
@@ -821,7 +823,7 @@ form.contact-form {
 
 .event-slideshow{
   width:100%;
-  min-height:420px;
+  min-height:680px;
   position:relative;
   overflow:hidden;
   background:var(--color-deep-sea);
