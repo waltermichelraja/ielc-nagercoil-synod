@@ -14,24 +14,6 @@
       "image": "/images/events/1-4be45b8694.jpeg"
     },
     {
-      "title": "குரு அபிஷேக ஆராதனை - 2026",
-      "date": "05.08.2026",
-      "description": "நாகர்கோவில் சபை சங்கம்  -  குரு அபிஷேக ஆராதனை - 2026 ",
-      "image": "/images/events/1.jpeg"
-    },
-    {
-      "title": "Pastors Committee Meeting ",
-      "date": "Aug - 2026",
-      "description": "Nagercoil Synod Pastors committee meeting",
-      "image": "/images/events/2.jpeg"
-    },
-    {
-      "title": "IELC Constitutional Amendment Meeting",
-      "date": "04.09.2026",
-      "description": "",
-      "image": "/images/events/ielcconstitutionalamendmentmeeting.jpeg"
-    },
-    {
       "title": "Installation -2025",
       "date": "Nov - 2025",
       "description": "",
@@ -48,6 +30,24 @@
       "date": "Nov - 2025",
       "description": "",
       "image": "/images/events/installationgt-59f7d64b2d.jpg"
+    },
+    {
+      "title": "குரு அபிஷேக ஆராதனை - 2026",
+      "date": "05.08.2026",
+      "description": "நாகர்கோவில் சபை சங்கம்  -  குரு அபிஷேக ஆராதனை - 2026 ",
+      "image": "/images/events/1.jpeg"
+    },
+    {
+      "title": "Pastors Committee Meeting ",
+      "date": "Aug - 2026",
+      "description": "Nagercoil Synod Pastors committee meeting",
+      "image": "/images/events/2.jpeg"
+    },
+    {
+      "title": "IELC Constitutional Amendment Meeting",
+      "date": "04.09.2026",
+      "description": "",
+      "image": "/images/events/ielcconstitutionalamendmentmeeting.jpeg"
     }
   ],
   "circleEvents": [
