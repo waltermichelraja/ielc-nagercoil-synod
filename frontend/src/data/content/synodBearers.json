@@ -1,38 +1,178 @@
 {
-  "president": { "name": "Rev. R. Sathianathan", "phone": "+91 99442 60905", "bio": "", "photo": "/images/people/sathyanathan.png" },
-  "vicePresident": { "name": "Rev. T.V. Babu", "phone": "+91 94888 89273", "bio": "", "photo": "/images/people/tvbabu.png" },
-  "secretary": { "name": "Mr. M. Madev Santhaiah", "phone": "+91 94430 86766", "bio": "", "photo": "/images/people/madhu.png" },
-  "jointSecretary": { "name": "Mr. P. Baskar", "phone": "+91 63838 79711", "bio": "", "photo": "/images/people/baskar.png" },
-  "treasurer": { "name": "Mr. R. Binoba", "phone": "+91 90952 03010", "bio": "", "photo": "/images/people/binoba.png" },
+  "president": {
+    "name": "Rev. R. Sathianathan",
+    "phone": "+91 99442 60905",
+    "bio": "",
+    "photo": "/images/people/sathyanathan-4d1a1f42d5.jpg"
+  },
+  "vicePresident": {
+    "name": "Rev. T.V. Babu",
+    "phone": "+91 94888 89273",
+    "bio": "",
+    "photo": "/images/people/tvbabu-5ce3f405b5.jpg"
+  },
+  "secretary": {
+    "name": "Mr. M. Madev Santhaiah",
+    "phone": "+91 94430 86766",
+    "bio": "",
+    "photo": "/images/people/madhu-a318e635df.jpg"
+  },
+  "jointSecretary": {
+    "name": "Mr. P. Baskar",
+    "phone": "+91 63838 79711",
+    "bio": "",
+    "photo": "/images/people/baskar-da2f4c887c.jpg"
+  },
+  "treasurer": {
+    "name": "Mr. R. Binoba",
+    "phone": "+91 90952 03010",
+    "bio": "",
+    "photo": "/images/people/binoba-27a2744b55.jpg"
+  },
   "executiveMembers": [
-    { "name": "Rev. R. Siril David", "place": "Colachel", "phone": "+91 94869 61009", "photo": "/images/people/siril.png" },
-    { "name": "Mr. N. Suresh", "place": "Colachel", "phone": "+91 94895 42651", "photo": "/images/people/suresh.png" },
-    { "name": "Mr. T. Justin", "place": "Colachel", "phone": "+91 80562 67520", "photo": "/images/people/justin.png" },
-    { "name": "Rev. B. Prabhu Kumar", "place": "Madurai", "phone": "+91 96559 51560", "photo": "/images/people/prabu.png" },
-    { "name": "Mr. S. Mahendran", "place": "Madurai", "phone": "+91 90471 70391", "photo": "/images/people/mahendran.png" },
-    { "name": "Mr. D. Suresh Kumar", "place": "Madurai", "phone": "+91 97474 14543", "photo": "/images/people/sureshkumar.png" },
-    { "name": "Rev. Y. Maeshak", "place": "Nagercoil", "phone": "+91 89213 30323", "photo": "/images/people/meshak.png" },
-    { "name": "Mr. A. Daniel Arul", "place": "Nagercoil", "phone": "+91 97917 64144", "photo": "/images/people/arul.png" },
-    { "name": "Mr. Veda Prasad", "place": "Nagercoil", "phone": "+91 85080 00080", "photo": "/images/people/prasad.png" },
-    { "name": "Rev. S. Shelly Rajan", "place": "Thovalai", "phone": "+91 94433 00311", "photo": "/images/people/shelly.png" },
-    { "name": "Mr. T. Kirubakaran", "place": "Thovalai", "phone": "+91 96299 99229", "photo": "/images/people/kirubha.png" },
-    { "name": "Mr. A. Martin Prem Chandar", "place": "Thovalai", "phone": "+91 94434 93291", "photo": "/images/people/martin.png" },
-    { "name": "Rev. S. Essaku", "place": "Tirunelveli", "phone": "+91 94890 06011", "photo": "/images/people/esaku.png" },
-    { "name": "Mr. P. Rajamani", "place": "Tirunelveli", "phone": "+91 97881 28413", "photo": "/images/people/rajamani.png" },
-    { "name": "Mr. G. Rajan", "place": "Tirunelveli", "phone": "+91 88385 61136", "photo": "/images/people/rajan.png" }
+    {
+      "name": "Rev. R. Siril David",
+      "place": "Colachel",
+      "phone": "+91 94869 61009",
+      "photo": "/images/people/siril-53fc43d80d.jpg"
+    },
+    {
+      "name": "Mr. N. Suresh",
+      "place": "Colachel",
+      "phone": "+91 94895 42651",
+      "photo": "/images/people/suresh-86cbfae8fa.jpg"
+    },
+    {
+      "name": "Mr. T. Justin",
+      "place": "Colachel",
+      "phone": "+91 80562 67520",
+      "photo": "/images/people/justin-a418c9addd.jpg"
+    },
+    {
+      "name": "Rev. B. Prabhu Kumar",
+      "place": "Madurai",
+      "phone": "+91 96559 51560",
+      "photo": "/images/people/prabu-659088aba5.jpg"
+    },
+    {
+      "name": "Mr. S. Mahendran",
+      "place": "Madurai",
+      "phone": "+91 90471 70391",
+      "photo": "/images/people/mahendran-702b71bfe4.jpg"
+    },
+    {
+      "name": "Mr. D. Suresh Kumar",
+      "place": "Madurai",
+      "phone": "+91 97474 14543",
+      "photo": "/images/people/sureshkumar-8a309e120d.jpg"
+    },
+    {
+      "name": "Rev. Y. Maeshak",
+      "place": "Nagercoil",
+      "phone": "+91 89213 30323",
+      "photo": "/images/people/meshak-851dd262dd.jpg"
+    },
+    {
+      "name": "Mr. A. Daniel Arul",
+      "place": "Nagercoil",
+      "phone": "+91 97917 64144",
+      "photo": "/images/people/arul-15d2f07a1d.jpg"
+    },
+    {
+      "name": "Mr. Veda Prasad",
+      "place": "Nagercoil",
+      "phone": "+91 85080 00080",
+      "photo": "/images/people/prasad-fbb45f0b0b.jpg"
+    },
+    {
+      "name": "Rev. S. Shelly Rajan",
+      "place": "Thovalai",
+      "phone": "+91 94433 00311",
+      "photo": "/images/people/shelly-10ba37e656.jpg"
+    },
+    {
+      "name": "Mr. T. Kirubakaran",
+      "place": "Thovalai",
+      "phone": "+91 96299 99229",
+      "photo": "/images/people/kirubha-7d0b9f9a85.jpg"
+    },
+    {
+      "name": "Mr. A. Martin Prem Chandar",
+      "place": "Thovalai",
+      "phone": "+91 94434 93291",
+      "photo": "/images/people/martin-f2882c6b33.jpg"
+    },
+    {
+      "name": "Rev. S. Essaku",
+      "place": "Tirunelveli",
+      "phone": "+91 94890 06011",
+      "photo": "/images/people/esaku-e84fdea173.jpg"
+    },
+    {
+      "name": "Mr. P. Rajamani",
+      "place": "Tirunelveli",
+      "phone": "+91 97881 28413",
+      "photo": "/images/people/rajamani-43bd7ab5d8.jpg"
+    },
+    {
+      "name": "Mr. G. Rajan",
+      "place": "Tirunelveli",
+      "phone": "+91 88385 61136",
+      "photo": "/images/people/rajan-9b03b48230.jpg"
+    }
   ],
   "churchCouncilMembers": [
-    { "name": "Mr. A. Regu Anantha Raj", "place": "Colachel", "phone": "" },
-    { "name": "Mr. C. Meinzen", "place": "Madurai", "phone": "+91 94964 48602" },
-    { "name": "Rev. R. Kanaga Sundaram", "place": "Nagercoil", "phone": "+91 99762 34204" },
-    { "name": "Rev. M. Jeya Alin", "place": "Thovalai", "phone": "+91 94434 15213" },
-    { "name": "Mr. S. Simon Francis", "place": "Tirunelveli", "phone": "+91 95008 38209" }
+    {
+      "name": "Mr. A. Regu Anantha Raj",
+      "place": "Colachel",
+      "phone": ""
+    },
+    {
+      "name": "Mr. C. Meinzen",
+      "place": "Madurai",
+      "phone": "+91 94964 48602"
+    },
+    {
+      "name": "Rev. R. Kanaga Sundaram",
+      "place": "Nagercoil",
+      "phone": "+91 99762 34204"
+    },
+    {
+      "name": "Rev. M. Jeya Alin",
+      "place": "Thovalai",
+      "phone": "+91 94434 15213"
+    },
+    {
+      "name": "Mr. S. Simon Francis",
+      "place": "Tirunelveli",
+      "phone": "+91 95008 38209"
+    }
   ],
   "trustAssociationMembers": [
-    { "name": "Mr. Ramesh Chellan", "place": "Colachel", "phone": "+91 94866 26261" },
-    { "name": "Mr. V. Edwin David Dharmaraj", "place": "Madurai", "phone": "+91 97877 93413" },
-    { "name": "Rev. S. Charles", "place": "Nagercoil", "phone": "+91 89032 54242" },
-    { "name": "Rev. J. Johndhas", "place": "Thovalai", "phone": "+91 94421 83465" },
-    { "name": "Mr. R. Ravindren", "place": "Tirunelveli", "phone": "+91 94434 56750" }
+    {
+      "name": "Mr. Ramesh Chellan",
+      "place": "Colachel",
+      "phone": "+91 94866 26261"
+    },
+    {
+      "name": "Mr. V. Edwin David Dharmaraj",
+      "place": "Madurai",
+      "phone": "+91 97877 93413"
+    },
+    {
+      "name": "Rev. S. Charles",
+      "place": "Nagercoil",
+      "phone": "+91 89032 54242"
+    },
+    {
+      "name": "Rev. J. Johndhas",
+      "place": "Thovalai",
+      "phone": "+91 94421 83465"
+    },
+    {
+      "name": "Mr. R. Ravindren",
+      "place": "Tirunelveli",
+      "phone": "+91 94434 56750"
+    }
   ]
 }

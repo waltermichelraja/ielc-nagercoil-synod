@@ -32,9 +32,32 @@ export default function Overview(){
 
       <section className="section">
         <div className="container">
-          <h2>Congregations</h2>
+          <h2>Circles</h2>
           <p>Pastors, pastorates, congregations, gospel centers, and schools across the Synod's five circles.</p>
-          <div style={{overflowX:"auto"}}>
+          <div className="card-grid">
+            {circles.map(circle=>(
+              <div className="card" key={circle.slug}>
+                <h3>{circle.name}</h3>
+                <p>
+                  <strong>President:</strong> {circle.president}
+                  <br/>
+                  <strong>Vice President:</strong> {circle.vicePresident}
+                  <br/>
+                  <strong>Secretary cum Treasurer:</strong> {circle.secretaryTreasurer}
+                  <br/>
+                  <strong>Joint Secretary:</strong> {circle.jointSecretary}
+                </p>
+                <a href={`/circles/${circle.slug}`}>View {circle.name} &rarr;</a>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+      <section className="section section-alt">
+        <div className="container">
+          <h2>Circle Statistics</h2>
+          <div style={{overflowX:"auto",marginTop:"var(--space-4)"}}>
             <table className="data-table">
               <thead>
                 <tr>
