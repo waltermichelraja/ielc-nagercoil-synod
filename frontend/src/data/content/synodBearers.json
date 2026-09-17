@@ -121,12 +121,18 @@
       "photo": "/images/people/rajan-9b03b48230.jpg"
     }
   ],
-  "officeStaffs":[
+  "officeStaffs": [
     {
-      "name": "Mr. ABC",
-      "place": "Nagercoil",
-      "phone": "+91 12345 67890",
-      "photo": "/images/placeholder-person.svg"
+      "name": "Mrs. D. Sheeja",
+      "place": "Clerk",
+      "phone": "",
+      "photo": "/images/people/139379-1b8b8cb232.jpg"
+    },
+    {
+      "name": "Mr. M. Subash ",
+      "place": "Office assistant ",
+      "phone": "",
+      "photo": "/images/people/139804-aa0e0a5e33.jpg"
     }
   ],
   "churchCouncilMembers": [
