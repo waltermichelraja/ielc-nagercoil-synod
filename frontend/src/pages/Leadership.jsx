@@ -9,7 +9,6 @@ export default function Leadership() {
     { key: "jointSecretary", role: "Joint Secretary" },
     { key: "treasurer", role: "Treasurer" },
   ];
-
   return (
     <>
       <section className="section">
@@ -17,7 +16,6 @@ export default function Leadership() {
           <span className="eyebrow">Leadership</span>
           <h1>Office Bearers</h1>
           <p>Office bearers of the Nagercoil Synod.</p>
-
           <div className="card-grid">
             {officeBearers.map(({ key, role }) => {
               const person = synodBearers[key];
@@ -34,7 +32,6 @@ export default function Leadership() {
           </div>
         </div>
       </section>
-
       <section className="section section-alt">
         <div className="container">
           <h2>Executive Members</h2>
@@ -50,8 +47,22 @@ export default function Leadership() {
           </div>
         </div>
       </section>
-
       <section className="section">
+        <div className="container">
+          <h2>Office Staffs</h2>
+          <div className="card-grid">
+            {synodBearers.officeStaffs.map((staff,i)=>(
+              <div className="card" key={i}>
+                <img className="person-photo" src={staff.photo} alt="" />
+                <h3>{staff.name}</h3>
+                <p className="role">{staff.place}</p>
+                {staff.phone&&<p>{staff.phone}</p>}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="section section-alt">
         <div className="container">
           <h2>Church Council Members</h2>
           <div className="card-grid">
@@ -65,8 +76,7 @@ export default function Leadership() {
           </div>
         </div>
       </section>
-
-      <section className="section section-alt">
+      <section className="section">
         <div className="container">
           <h2>Trust Association Members</h2>
           <div className="card-grid">

@@ -156,6 +156,16 @@ const councilMemberSchema = {
   ],
 };
 
+const officeStaffSchema = {
+  type: "object",
+  fields: [
+    { key: "name", label: "Name", type: "text" },
+    { key: "place", label: "Place", type: "text" },
+    { key: "phone", label: "Phone", type: "text" },
+    { key: "photo", label: "Photo", type: "image", folder: "people" },
+  ],
+};
+
 const synodBearersSchema = {
   type: "object",
   fields: [
@@ -170,6 +180,13 @@ const synodBearersSchema = {
       type: "list",
       itemLabel: "Member",
       itemSchema: executiveMemberSchema,
+    },
+    {
+      key: "officeStaffs",
+      label: "Office Staffs",
+      type: "list",
+      itemLabel: "Staff",
+      itemSchema: officeStaffSchema,
     },
     {
       key: "churchCouncilMembers",
