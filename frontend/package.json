@@ -4,8 +4,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "generate:events": "node scripts/generate-event-images.mjs",
+    "predev": "npm run generate:events",
     "dev": "vite",
-    "build":"node scripts/generate-event-images.mjs && vite build",
+    "prebuild": "npm run generate:events",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
