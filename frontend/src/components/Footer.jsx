@@ -22,8 +22,9 @@ export default function Footer(){
             <p>
               {contact.email&&<>Email: <a href={`mailto:${contact.email}`}>{contact.email}</a></>}
               {contact.email&&contact.phone&&<br/>}
-              {contact.phone&&<>Phone: {contact.phone}</>}
-              {!contact.email&&!contact.phone&&<>Contact details will be updated when an email address or phone number is provided.</>}
+              {contact.phone&&<>Phone: {contact.phone}</>}<br/>
+              {contact.mobile&&<>Mobile: {contact.mobile}</>}
+              {!contact.email&&!contact.phone&&!contact.mobile&&<>Contact details will be updated when an email address or phone number is provided.</>}
             </p>
           </div>
           <div>

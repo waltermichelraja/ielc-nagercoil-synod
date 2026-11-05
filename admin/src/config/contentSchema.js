@@ -29,6 +29,7 @@ const siteSchema = {
         { key: "address", label: "Address", type: "textarea" },
         { key: "email", label: "Email", type: "text" },
         { key: "phone", label: "Phone", type: "text" },
+        { key: "mobile", label: "Mobile", type: "text" },
         { key: "website", label: "Website", type: "text" },
         { key: "mapEmbedUrl", label: "Map embed URL", type: "text" },
       ],
