@@ -55,10 +55,9 @@ export default function EventSlideshow(){
       </div>
 
       <div className="event-slideshow__topbar">
-        <span className="event-slideshow__counter">
+        {/* <span className="event-slideshow__counter">
           {index+1} / {total}
-        </span>
-
+        </span> */}
         <div className="event-slideshow__dots">
           {eventImages.map((image,imageIndex)=>(
             <button
